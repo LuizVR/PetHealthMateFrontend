@@ -14,7 +14,7 @@
       </ion-header>
 
       <div id="container">
-        <strong>Prueba #6 para comprobar</strong>
+        <strong>Prueba #7 para comprobar funcionamiento de rama</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
