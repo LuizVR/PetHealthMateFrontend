@@ -14,7 +14,7 @@
       </ion-header>
 
       <div id="container">
-        <strong>Prueba para azure</strong>
+        <strong>Prueba #2 para comprobar</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
       </div>
     </ion-content>
