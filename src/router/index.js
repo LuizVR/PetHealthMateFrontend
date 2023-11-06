@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import { RouteRecordRaw } from 'vue-router';
 import HomePage from '../views/HomePage.vue'
 import Menu from '../views/Menu.vue'
 
