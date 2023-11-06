@@ -8,8 +8,8 @@
   
       <ion-content :fullscreen="true">
         <ion-grid>
-          <ion-row>
-            <ion-col size="6" v-for="(item, index) in menuItems" :key="index">
+          <ion-row v-for="(item, index) in menuItems" :key="index">
+            <ion-col size="12">
               <ion-card :color="item.color" button @click="openPage(item.page)">
                 <ion-card-content class="ion-text-center">
                   <ion-icon :icon="item.icon" size="large"></ion-icon>
@@ -22,5 +22,6 @@
       </ion-content>
     </ion-page>
   </template>
+  
   <script src="./js/MenuScript.js"></script>
   <style src="./css/MenuStyles.css" scoped></style>
