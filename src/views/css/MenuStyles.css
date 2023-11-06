@@ -12,11 +12,9 @@ ion-card {
     align-items: center;
     width: 100%;
   }
-  
-  ion-icon[name="person-circle"] {
-    font-size: 2rem; /* Ajusta el tamaño como prefieras */
+ 
+  .user-icon {
+    height: 50px; /* Ajusta según el tamaño que necesites */
     cursor: pointer;
   }
   
-  
-/* Estilos adicionales si son necesarios */
