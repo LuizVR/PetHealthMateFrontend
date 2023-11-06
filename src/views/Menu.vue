@@ -23,7 +23,7 @@
     </ion-page>
   </template>
   
-  <script >
+  <script>
   import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { paw, football, calendar, notifications } from 'ionicons/icons';
