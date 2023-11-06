@@ -22,5 +22,5 @@
       </ion-content>
     </ion-page>
   </template>
-  <script src="js/MenuScript.js"></script>
-  <style src="css/MenuStyles.css" scoped></style>
+  <script src="./js/MenuScript.js"></script>
+  <style src="./css/MenuStyles.css" scoped></style>
