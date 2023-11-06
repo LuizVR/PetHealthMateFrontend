@@ -1,12 +1,15 @@
 <template>
     <ion-page>
       <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>Actividades</ion-title>
+        <ion-toolbar>
+          <div class="header-content">
+            <ion-icon name="person-circle" @click="goToUserProfile"></ion-icon>
+            <ion-title>Actividades</ion-title>
+          </div>
         </ion-toolbar>
       </ion-header>
   
-      <ion-content :fullscreen="true">
+      <ion-content :fullscreen="true" class="background">
         <ion-grid>
           <ion-row v-for="(item, index) in menuItems" :key="index">
             <ion-col size="12">

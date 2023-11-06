@@ -1,7 +1,6 @@
-
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from '@ionic/vue';
 import { defineComponent } from 'vue';
-import { paw, calendar, notifications } from 'ionicons/icons';
+import { personCircleOutline } from 'ionicons/icons'; // Importa el ícono correcto
 
 export default defineComponent({
   name: 'MenuPage',
@@ -19,17 +18,16 @@ export default defineComponent({
     IonIcon
   },
   setup() {
-    const menuItems = [
-      { title: 'Mis mascotas', icon: paw, color: 'dark', page: '/pets' },
-      { title: 'Calendario de la salud', icon: calendar, color: 'tertiary', page: '/health-calendar' },
-      { title: 'Campañas', icon: notifications, color: 'warning', page: '/campaigns' },
-    ];
+    // Define tu matriz de elementos de menú y la lógica para abrir una página aquí.
 
-    const openPage = (page) => {
-      // Aquí iría la lógica para abrir la página correspondiente.
-      console.log(`Opening page: ${page}`);
+    const goToUserProfile = () => {
+      // Aquí colocarías la lógica para navegar al perfil del usuario
+      console.log('Ir al perfil del usuario');
     };
 
-    return { menuItems, openPage };
+    return { 
+      // tus variables y métodos retornados
+      goToUserProfile,
+    };
   }
 });
