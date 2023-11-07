@@ -1,0 +1,14 @@
+.fondo {
+    /* Estilos del fondo */
+    background-image: url('@/img/fondo_huellas.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajustar el tamaño de la imagen para cubrir completamente el contenedor */
+    background-position: center; /* Centrar la imagen en el contenedor */
+    position: fixed; /* Fijar el fondo para que ocupe toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el fondo detrás del contenido */
+    margin: 0; /* Eliminar el margen para que el fondo no tenga espacios en blanco alrededor */
+    padding: 0; /* Eliminar el padding para que el fondo no tenga espacios en blanco alrededor */
+}

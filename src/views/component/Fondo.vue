@@ -1,20 +1,6 @@
 <template>
-    <div class="fondo"></div>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
-        <p>Hola</p>
+    <div class="fondo">
+        <slot></slot>
+    </div>
 </template>
-<style>
-.fondo {
-    background-image: url('@/img/fondo_huellas.jpg');
-    background-size: cover;
-    background-position: center;
-}
-</style>
+<style scoped src="../css/Fondo.css"></style>

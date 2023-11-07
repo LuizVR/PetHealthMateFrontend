@@ -8,22 +8,23 @@
           </div>
         </ion-toolbar>
       </ion-header>
-  
-      <ion-content :fullscreen="true" class="background">
-      <ion-grid>
-        <ion-row v-for="(item, index) in menuItems" :key="index">
-          <ion-col size="12">
-            <ion-card :color="item.color" button @click="openPage(item.page)">
-              <ion-card-content class="ion-text-center">
-                <ion-icon :icon="item.icon" size="large"></ion-icon>
-                <div>{{ item.title }}</div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-content>
-  </ion-page>
+      <ion-content :fullscreen="true">
+        <FondoComponent>
+        <ion-grid>
+          <ion-row v-for="(item, index) in menuItems" :key="index">
+            <ion-col size="12">
+              <ion-card :color="item.color" button @click="openPage(item.page)">
+                <ion-card-content class="ion-text-center">
+                  <ion-icon :icon="item.icon" size="large"></ion-icon>
+                  <div>{{ item.title }}</div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </FondoComponent>
+      </ion-content>
+    </ion-page>
 </template>
   
   <script src="./js/MenuScript.js"></script>
