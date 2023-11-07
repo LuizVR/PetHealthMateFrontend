@@ -1,6 +1,7 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { paw, calendar, notifications } from 'ionicons/icons';
+import Background from '../js/Background.vue'
 
 export default defineComponent({
   name: 'MenuPage',
@@ -15,7 +16,8 @@ export default defineComponent({
     IonCol,
     IonCard,
     IonCardContent,
-    IonIcon
+    IonIcon,
+    Background
   },
   setup() {
     const menuItems = [

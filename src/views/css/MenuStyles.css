@@ -2,9 +2,9 @@
 ion-card {
   --background: #fff; /* Establece el color de fondo de las tarjetas */
 }
-.background {
-    --background: url('/src/img/fondo_huellas.jpg') 0 0/100% 100% no-repeat; /* Actualiza con la ruta correcta de tu imagen */
-  }
+/* .background {
+    --background: url('/src/img/fondo_huellas.jpg') 0 0/100% 100% no-repeat; /* Actualiza con la ruta correcta de tu imagen
+  } */
   
   .header-content {
     display: flex;
