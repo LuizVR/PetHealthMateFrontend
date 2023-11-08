@@ -1,15 +1,19 @@
 <template>
-    <ion-page>
-      <ion-header>
-        <ion-toolbar>
-          <div class="header-content">
-            <img src="/src/img/icons/usuario_icon.png" alt="User Profile" @click="goToUserProfile" class="user-icon">
-            <ion-title>Actividades</ion-title>
-          </div>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content :fullscreen="true">
-        <FondoComponent>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <div class="header-content">
+          <img
+            src="/src/img/icons/usuario_icon.png"
+            alt="User Profile"
+            @click="goToUserProfile"
+            class="user-icon"
+          />
+          <ion-title>Actividades</ion-title>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true" class="background">
         <ion-grid>
           <ion-row v-for="(item, index) in menuItems" :key="index">
             <ion-col size="12">
@@ -22,10 +26,9 @@
             </ion-col>
           </ion-row>
         </ion-grid>
-      </FondoComponent>
-      </ion-content>
-    </ion-page>
+    </ion-content>
+  </ion-page>
 </template>
-  
-  <script src="./js/MenuScript.js"></script>
-  <style src="./css/MenuStyles.css" scoped></style>
+
+<script src="./js/MenuScript.js"></script>
+<style scoped src="./css/MenuStyles.css"></style>

@@ -1,8 +1,21 @@
-import FondoComponent from '../component/Fondo.vue'; // Importando el componente del fondo
-  
-export default {
+import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'LoginPage',
   components: {
-    FondoComponent,
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonCard,
+    IonCardContent,
+    IonIcon,
+    IonInput
   },
   data() {
     return {
@@ -20,4 +33,4 @@ export default {
       this.$router.push('/registro');
     },
   },
-};
+});
