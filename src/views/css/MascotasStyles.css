@@ -1,0 +1,17 @@
+ion-card {
+    margin: 10px;
+  }
+  
+  ion-card-header {
+    background-color: #FFA726; /* Color de fondo para el header */
+    color: white; /* Color del texto */
+  }
+  
+  ion-card-content {
+    padding: 10px;
+  }
+  
+  img {
+    width: 100%; /* Asegúrate de que las imágenes se escalen correctamente */
+  }
+  

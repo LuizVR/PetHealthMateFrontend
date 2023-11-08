@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue'
 import Menu from '../views/Menu.vue'
 import Login from '../views/Login.vue'
 import Mascotas from '../views/Mascotas.vue'
+import PostMascotas from '../views/PostMascotas.vue'
 
 const routes = [
   {
@@ -28,7 +29,12 @@ const routes = [
     path: '/mascotas',
     name: 'Mascotas',
     component: Mascotas
-  }
+  },
+  {
+    path: '/postMascotas',
+    name: 'PostMascotas',
+    component: PostMascotas
+  },
 ]
 
 const router = createRouter({
