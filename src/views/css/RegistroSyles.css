@@ -1,0 +1,77 @@
+.background {
+  --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+}
+
+.custom {
+  --background: #ffffff !important;
+  --color: #000000 !important;
+  --placeholder-color: #170c0c !important;
+  --placeholder-opacity: 0.5;
+  width: 250px;
+  margin: 12px;
+  font-family: "Cuerpo";
+  --border-width: 0;
+  --background: transparent;
+  height: 45px !important;
+  min-height: 45px !important;
+}
+
+ion-toolbar {
+  color: #000000;
+  --background: #d2b48c;
+  font-family: "Titulo";
+}
+.contenido {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+}
+p {
+  color: #000000;
+  font-family: "Cuerpo";
+  text-align: left;
+  font-size: 12px;
+}
+
+ion-checkbox {
+  --text-align: left; 
+  margin-top: 10px;
+  --size: 25px; 
+}
+
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid #d2b48c;
+  --checkbox-background-checked: #d2b48c;
+  --checkbox-background: #ffffff;
+}
+.registro-button{
+  --background: #D2B48C;
+  --border-radius: 20px;
+  color:#000000;
+  margin-top: 25px;
+  font-family: 'Cuerpo';
+}
+ion-input{
+  --border-radius:20px;
+}
+.login-button{
+  --background: #D2B48C;
+  --border-radius: 20px;
+  color:#000000;
+  width: 90px !important;;
+  height: 20px !important;
+  min-height: 20px !important;
+  font-family: "Cuerpo";
+  font-size: 10px;
+}
+.login-p{
+  margin-top: 25px;
+}

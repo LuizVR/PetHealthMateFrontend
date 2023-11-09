@@ -4,6 +4,7 @@ import Menu from '../views/Menu.vue'
 import Login from '../views/Login.vue'
 import Mascotas from '../views/Mascotas.vue'
 import PostMascotas from '../views/PostMascotas.vue'
+import Registro from '../views/Registro.vue'
 
 const routes = [
   {
@@ -21,7 +22,7 @@ const routes = [
     component: Menu
   },
   {
-    path: '/Login',
+    path: '/login',
     name: 'Login',
     component: Login
   },
@@ -34,6 +35,11 @@ const routes = [
     path: '/postMascotas',
     name: 'PostMascotas',
     component: PostMascotas
+  },
+  {
+    path: '/registro',
+    name: 'Registro',
+    component: Registro
   },
 ]
 
