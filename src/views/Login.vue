@@ -6,29 +6,22 @@
       </ion-toolbar>
     </ion-header>
 
-    <ion-content class="ion-padding">
-      <div class="background">
-
-        <ion-input class="custom" label="Correo" label-placement="floating" fill="solid"
-         placeholder="Ingresar Correo" :clear-input="true" color="custom" type="email" v-model="email">
+    <ion-content :fullscreen="true" class="background">
+      <div class="contenido">>
+        <ion-input class="custom" label="Correo" label-placement="floating" fill="solid" placeholder="Ingresar Correo"
+          :clear-input="true" color="custom" type="email" v-model="email" required>
         </ion-input>
-
         <ion-input class="custom" label="Contraseña" label-placement="floating" fill="solid"
-         placeholder="Ingresa contraseña" color="custom" type="password" v-model="password">
+          placeholder="Ingresa contraseña" color="custom" type="password" v-model="password" required>
         </ion-input>
         <p class="olvidaste">
-          ¿Olvidaste la 
-          <ion-router-link @click="irARestablecer" class="pintar"
-            >contraseña?</ion-router-link>
+          ¿Olvidaste la <ion-button @click="iniciarSesion" class="links-button">Contraseña</ion-button>?
         </p>
-
         <ion-button @click="iniciarSesion" class="login-button">
           Iniciar sesión
         </ion-button>
-
         <p class="registrate">
-          ¿Aún no tienes cuenta?,
-          <ion-router-link @click="irARegistro" class="pintar">Regístrate</ion-router-link>
+          ¿Aún no tienes cuenta?,<ion-button @click="irARegistro" class="links-button">Registrate</ion-button>
         </p>
       </div>
     </ion-content>

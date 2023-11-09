@@ -1,4 +1,4 @@
-import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonIcon } from '@ionic/vue';
+import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -9,13 +9,8 @@ export default defineComponent({
     IonToolbar,
     IonTitle,
     IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonCard,
-    IonCardContent,
-    IonIcon,
-    IonInput
+    IonInput,
+    IonButton
   },
   data() {
     return {
