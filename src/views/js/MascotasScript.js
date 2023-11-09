@@ -20,7 +20,7 @@ export default defineComponent({
   methods: {
     async fetchPets() {
       try {
-        const response = await axios.get('URL'); // Reemplaza 'API_URL' con la URL de tu API
+        const response = await axios.get('https://localhost:44329/api/Pet'); // Reemplaza 'API_URL' con la URL de tu API
         this.pets = response.data;
       } catch (error) {
         console.error('Error fetching pets:', error);

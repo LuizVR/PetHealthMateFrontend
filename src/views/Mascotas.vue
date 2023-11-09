@@ -8,8 +8,8 @@
       <ion-content>
         <ion-card v-for="pet in pets" :key="pet.id">
           <ion-card-header>
-            <img :src="pet.photo" />
-            <ion-card-title>{{ pet.name }}</ion-card-title>
+            <img :src="pet.foto" />
+            <ion-card-title>{{ pet.nombre }}</ion-card-title>
           </ion-card-header>
         </ion-card>
         <ion-fab vertical="bottom" horizontal="end">

@@ -20,11 +20,18 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Talla</ion-label>
-          <ion-input v-model="form.talla"></ion-input>
+          <ion-select v-model="form.talla" placeholder="Selecciona una talla">
+            <ion-select-option value="chico">Chico</ion-select-option>
+            <ion-select-option value="mediano">Mediano</ion-select-option>
+            <ion-select-option value="grande">Grande</ion-select-option>
+          </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Especie</ion-label>
-          <ion-input v-model="form.especie"></ion-input>
+          <ion-select v-model="form.especie" placeholder="Selecciona una especie">
+          <ion-select-option value="perro">Perro</ion-select-option>
+            <ion-select-option value="gato">Gato</ion-select-option>
+          </ion-select>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Sexo</ion-label>
