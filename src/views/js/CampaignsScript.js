@@ -1,9 +1,9 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput } from '@ionic/vue';
 import axios from 'axios';
 
 export default {
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput
   },
   data() {
     return {
@@ -21,7 +21,7 @@ export default {
     handleImageUpload(event) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        this.c.foto = e.target.result; // Esto será la imagen en base64 como una cadena de texto.
+        this.c.foto = e.target.result;
       };
       reader.onerror = (error) => {
         console.error('Error al leer el archivo: ', error);
@@ -33,15 +33,15 @@ export default {
       console.log('Fecha seleccionada:', fechaSeleccionada);
       this.c.fecha = fechaSeleccionada;
     },
+    updateField(field, event) {
+      this.c[field] = event.target.value;
+    },
     submitForm() {
-      console.log('Fecha seleccionada en formato deseado:', this.c.fecha);
-      // Convierte todos los valores del formulario a strings
       const dataToSend = Object.entries(this.c).reduce((acc, [key, value]) => {
-        // Convierte todo a string, excepto la imagen que ya está en base64
         acc[key] = key === 'foto' ? value : String(value);
         return acc;
       }, {});
-  
+
       console.log('Datos a enviar:', dataToSend);
 
       axios.post('https://localhost:44329/api/Campaign', dataToSend, {
@@ -50,13 +50,11 @@ export default {
         }
       })
       .then(response => {
-        // Maneja la respuesta aquí
         console.log(response.data);
       })
       .catch(error => {
-        // Maneja el error aquí
         console.error(error);
       });
-    }
+    },
   },
 };

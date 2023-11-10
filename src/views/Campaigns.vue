@@ -7,16 +7,16 @@
     </ion-header>
     <ion-content>
       <ion-item>
-          <ion-label position="floating">Titulo</ion-label>
-          <ion-input v-model="c.titulo"></ion-input>
-        </ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input :value="c.titulo" @input="updateField('titulo', $event)"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label position="floating">Descripcion</ion-label>
-        <ion-input v-model="c.descripcion"></ion-input>
+        <ion-input :value="c.descripcion" @input="updateField('descripcion', $event)"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Ubicacion</ion-label>
-        <ion-input v-model="c.ubicacion"></ion-input>
+        <ion-input :value="c.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
       </ion-item>
 
       <ion-item>
