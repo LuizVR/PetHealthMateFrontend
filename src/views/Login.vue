@@ -14,6 +14,7 @@
         <ion-input class="custom" label="Contraseña" label-placement="floating" fill="solid"
           placeholder="Ingresa contraseña" color="custom" type="password" v-model="password" required>
         </ion-input>
+        <input type="hidden" v-model="fotoPredeterminada">
         <p class="olvidaste">
           ¿Olvidaste la <ion-button @click="recuperarContraseña" class="links-button">Contraseña</ion-button>?
         </p>
