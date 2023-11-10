@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Mascotas from '../views/Mascotas.vue'
 import PostMascotas from '../views/PostMascotas.vue'
 import Campaign from '../views/Campaigns.vue'
+import Registro from '../views/Registro.vue'
 
 const routes = [
   {
@@ -40,7 +41,12 @@ const routes = [
     path: '/campaigns',
     name: 'Campaign',
     component: Campaign
-  }
+  },
+  {
+    path: '/registro',
+    name: 'Registro',
+    component: Registro
+  },
 ]
 
 const router = createRouter({

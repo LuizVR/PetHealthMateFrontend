@@ -15,7 +15,7 @@
           placeholder="Ingresa contraseña" color="custom" type="password" v-model="password" required>
         </ion-input>
         <p class="olvidaste">
-          ¿Olvidaste la <ion-button @click="iniciarSesion" class="links-button">Contraseña</ion-button>?
+          ¿Olvidaste la <ion-button @click="recuperarContraseña" class="links-button">Contraseña</ion-button>?
         </p>
         <ion-button @click="iniciarSesion" class="login-button">
           Iniciar sesión
