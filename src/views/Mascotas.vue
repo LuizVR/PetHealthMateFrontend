@@ -6,7 +6,7 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-card v-for="pet in pets" :key="pet.id">
+        <ion-card v-for="pet in pets" :key="pet.pet_Id"  @click="goToPetDetails(pet.pet_Id)">
           <ion-card-header>
             <img :src="pet.foto" />
             <ion-card-title>{{ pet.nombre }}</ion-card-title>

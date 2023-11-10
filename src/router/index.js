@@ -6,6 +6,7 @@ import Mascotas from '../views/Mascotas.vue'
 import PostMascotas from '../views/PostMascotas.vue'
 import Campaign from '../views/Campaigns.vue'
 import Registro from '../views/Registro.vue'
+import InfoMascota from '../views/EditarMascotas.vue'
 
 const routes = [
   {
@@ -41,6 +42,12 @@ const routes = [
     path: '/campaigns',
     name: 'Campaign',
     component: Campaign
+  },
+  {
+    path: '/mascota/:pet_Id',
+    name: 'InfoMascota',
+    component: InfoMascota,
+    props: true
   },
   {
     path: '/registro',

@@ -28,6 +28,10 @@ export default defineComponent({
     },
     goToAddPetPage() {
       this.$router.push('/postMascotas'); // Reemplaza 'ruta-a-tu-pagina' con la ruta a la que deseas redirigir
-    }
+    },
+
+    goToPetDetails(pet_Id) {
+      this.$router.push({ name: 'InfoMascota', params: { pet_Id } });
+    },
   }
 });
