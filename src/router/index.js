@@ -4,7 +4,7 @@ import Menu from '../views/Menu.vue'
 import Login from '../views/Login.vue'
 import Mascotas from '../views/Mascotas.vue'
 import PostMascotas from '../views/PostMascotas.vue'
-import Campaign from '../views/Campaigns.vue'
+import Campaign from '../views/CampaignsPost.vue'
 import Registro from '../views/Registro.vue'
 import InfoMascota from '../views/EditarMascotas.vue'
 
@@ -39,7 +39,7 @@ const routes = [
     component: PostMascotas
   },
   {
-    path: '/campaigns',
+    path: '/campaignsPost',
     name: 'Campaign',
     component: Campaign
   },
