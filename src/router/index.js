@@ -7,6 +7,7 @@ import PostMascotas from '../views/PostMascotas.vue'
 import Campaign from '../views/Campaigns.vue'
 import Registro from '../views/Registro.vue'
 import InfoMascota from '../views/EditarMascotas.vue'
+import Gps from '../views/Gps.vue'
 
 const routes = [
   {
@@ -53,6 +54,17 @@ const routes = [
     path: '/registro',
     name: 'Registro',
     component: Registro
+  },
+  {
+    path: '/Gps',
+    name: 'Gps',
+    component: Gps
+  },
+  {
+    path: '/campania/:lat/:lng/:street/:locality',
+    name: 'Campania',
+    component: Campaign,
+    props: true,
   },
 ]
 

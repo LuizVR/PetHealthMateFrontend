@@ -12,11 +12,12 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">Descripcion</ion-label>
-        <ion-input :value="c.descripcion" @input="updateField('descripcion', $event)"></ion-input>
+        <ion-input  :value="c.descripcion" @input="updateField('descripcion', $event)"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Ubicacion</ion-label>
-        <ion-input :value="c.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
+        <ion-input v-model="Gps" :value="c.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
+        <ion-button @click="AbrirUbicacion">Icono</ion-button>
       </ion-item>
 
       <ion-item>

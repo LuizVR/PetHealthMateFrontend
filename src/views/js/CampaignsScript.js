@@ -7,6 +7,7 @@ export default {
   },
   data() {
     return {
+      Gps:'',
       c: {
         titulo: '',
         descripcion: '',
@@ -17,6 +18,18 @@ export default {
       imageFile: null,
     };
   },
+  mounted() {
+    // Accede a los parámetros de la ruta
+    const lat = this.$route.params.lat;
+    const lng = this.$route.params.lng;
+    const street = this.$route.params.street;
+    const locality = this.$route.params.locality;
+    
+    console.log('Latitud:', lat);
+    console.log('Longitud:', lng);
+    this.Gps = `Municipio: ${locality}, Calle: ${street}`;
+  },
+ 
   methods: {
     handleImageUpload(event) {
       const reader = new FileReader();
@@ -35,6 +48,9 @@ export default {
     },
     updateField(field, event) {
       this.c[field] = event.target.value;
+    },
+    AbrirUbicacion(){
+      this.$router.push('/Gps');
     },
     submitForm() {
       const dataToSend = Object.entries(this.c).reduce((acc, [key, value]) => {
