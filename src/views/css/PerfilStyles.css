@@ -1,0 +1,29 @@
+.background {
+  --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+}
+.contenido {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.custom {
+  --background: #ffffff !important;
+  --color: #000000;
+  --placeholder-color: #170c0c;
+  --placeholder-opacity: 0.5;
+  width: 250px;
+  margin: 10px;
+  font-family: 'Cuerpo';
+  --border-width: 0;
+  --background: transparent;
+  height: 45px !important;
+  min-height: 45px !important;
+}
+
+ion-toolbar{
+  color:#000000;
+  --background: #D2B48C;
+  font-family: 'Titulo';
+}

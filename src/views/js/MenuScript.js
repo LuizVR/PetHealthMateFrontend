@@ -44,4 +44,10 @@ export default defineComponent({
       openPage
     };
   },
+  methods: {
+    goToUserProfile() {
+      // Redirigir a la página de registro
+      this.$router.push('/perfil');
+    },
+  }
 });
