@@ -29,12 +29,16 @@ export default defineComponent({
         nombre: "",
         correo: "",
         contrasenia: "",
-        fotoPredeterminada: '@/img/foto_usuario.png"'
+        foto: "@/img/foto_usuario.png"
       },
+      correosRegistrados: [] // Lista para almacenar correos registrados
     };
   },
+  async created() {
+    // Cargar la lista de correos registrados al iniciar la página
+    await this.cargarCorreosRegistrados();
+  },
   methods: {
-    // Método para mostrar un alert
     mostrarAlerta(titulo, mensaje) {
       const alert = alertController.create({
         header: titulo,
@@ -46,7 +50,17 @@ export default defineComponent({
         alert.present();
       });
     },
+    async cargarCorreosRegistrados() {
+      try {
+        const response = await axios.get("https://localhost:44329/api/User/emails");
+        this.correosRegistrados = response.data; // Almacena la lista de correos registrados
+      } catch (error) {
+        console.error("Error al cargar correos registrados:", error);
+      }
+    },
     async registrar() {
+this.usuario.foto = "ruta/a/tu/imagen.jpg";
+      // Validaciones de entrada
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.usuario.correo.match(emailRegex)) {
         this.mostrarAlerta("Error", "Por favor, ingrese un correo electrónico válido.");
@@ -65,7 +79,14 @@ export default defineComponent({
         return;
       }
 
+      // Verificar si el correo ya está registrado
+      if (this.correosRegistrados.includes(this.usuario.correo)) {
+        this.mostrarAlerta("Error", "El correo electrónico ya está registrado.");
+        return;
+      }
+
       try {
+        // Realizar la solicitud de registro
         const response = await axios.post("https://localhost:44329/api/User", this.usuario, {
           headers: {
             "Content-Type": "application/json",
@@ -76,7 +97,7 @@ export default defineComponent({
           this.mostrarAlerta("Éxito", "Usuario registrado correctamente.");
           this.$router.push("/login");
         } else {
-          this.mostrarAlerta("Error", response.data.error); // Muestra el mensaje de error del backend
+          this.mostrarAlerta("Error", response.data.error);
         }
       } catch (error) {
         console.error("Error al registrar usuario:", error);
@@ -85,10 +106,9 @@ export default defineComponent({
       this.usuario.nombre = "";
       this.usuario.correo = "";
       this.usuario.contrasenia = "";
-      this.usuario.fotoPredeterminada = "@/img/foto_usuario.png";
+      this.usuario.foto = "@/img/foto_usuario.png";
     },
     iniciarSesion() {
-      // Redirigir a la página de registro
       this.$router.push("/login");
     },
   },

@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
-import HomePage from '../views/HomePage.vue'
 import Menu from '../views/Menu.vue'
 import Login from '../views/Login.vue'
 import Mascotas from '../views/Mascotas.vue'
@@ -7,16 +6,14 @@ import PostMascotas from '../views/PostMascotas.vue'
 import Campaign from '../views/CampaignsPost.vue'
 import Registro from '../views/Registro.vue'
 import InfoMascota from '../views/EditarMascotas.vue'
+import Gps from '../views/Gps.vue'
+import ListaCampania from '../views/ListaCampanias.vue'
+import Perfil from '../views/Perfil.vue';
 
 const routes = [
   {
     path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: HomePage
+    redirect: '/login'
   },
   {
     path: '/menu',
@@ -54,8 +51,28 @@ const routes = [
     name: 'Registro',
     component: Registro
   },
+  {
+    path: '/Gps',
+    name: 'Gps',
+    component: Gps
+  },
+  {
+    path: '/campania/:lat/:lng/:street/:locality',
+    name: 'Campania',
+    component: Campaign,
+    props: true,
+  },
+  {
+    path: '/listacampa',
+    name: 'ListaCampania',
+    component: ListaCampania
+  },
+  {
+    path: '/perfil',
+    name: 'Perfil',
+    component: Perfil
+  },
 ]
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes

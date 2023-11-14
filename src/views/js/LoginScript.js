@@ -1,7 +1,6 @@
 import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
-import Cookies from "js-cookie";
 
 export default defineComponent({
   name: 'LoginPage',
@@ -53,10 +52,8 @@ export default defineComponent({
         });
       
         if (response.status === 200) {
-          console.log(response.data)
-          Cookies.set("Uuid", response.data.uuid);
           // Las credenciales son válidas, redirige a la página de inicio
-          this.$router.push('/home');
+          this.$router.push('/menu');
         } else {
           // Las credenciales son incorrectas, muestra un mensaje de error
           this.mostrarAlerta("Error", "Correo electrónico o contraseña incorrectos.");
