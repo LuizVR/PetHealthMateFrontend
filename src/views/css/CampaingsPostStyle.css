@@ -1,0 +1,12 @@
+.ubicacion{
+    height: 50px;
+    align-items: center;
+}
+.btnGps{
+    display: flex;
+    position: absolute;
+    left: 90vw;
+    top:  10px;
+    
+   
+}

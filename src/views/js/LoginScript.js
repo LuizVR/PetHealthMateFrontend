@@ -1,7 +1,7 @@
 import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 
 export default defineComponent({
   name: 'LoginPage',

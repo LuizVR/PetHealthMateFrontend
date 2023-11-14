@@ -14,11 +14,16 @@
         <ion-label position="floating">Descripcion</ion-label>
         <ion-input :value="c.descripcion" @input="updateField('descripcion', $event)"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label position="floating">Ubicacion</ion-label>
-        <ion-input :value="c.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
-      </ion-item>
+      
 
+      <ion-item class="ubicacion" >
+       
+        <ion-label position="floating">Ubicacion</ion-label>
+        <ion-input v-model="Gps"  :value="c.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
+        <ion-button @click="AbrirUbicacion" class="btnGps">GPS</ion-button>
+      
+       
+      </ion-item>
       <ion-item>
         <ion-label position="floating">Fecha</ion-label>
         <ion-datetime
@@ -38,3 +43,6 @@
 </template>
 
 <script src="./js/CampaignsPostScript.js"></script>
+<style scoped src="./css/CampaingsPostStyle.css">
+
+</style>

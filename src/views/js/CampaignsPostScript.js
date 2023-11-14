@@ -12,6 +12,8 @@ export default {
         titulo: '',
         descripcion: '',
         ubicacion: '',
+        latitud: '',
+        longitud: '',
         fecha: '',
         foto: '',
       },
@@ -19,15 +21,22 @@ export default {
     };
   },
   mounted() {
-    // Accede a los parámetros de la ruta
-    const lat = this.$route.params.lat;
-    const lng = this.$route.params.lng;
+    
+
+    // estas son las varibles que se pintan en el input pero aun hay un detalle.
     const street = this.$route.params.street;
     const locality = this.$route.params.locality;
+
     
-    console.log('Latitud:', lat);
-    console.log('Longitud:', lng);
-    this.Gps = `Municipio: ${locality}, Calle: ${street}`;
+    
+   
+    if (locality !== undefined && street !== undefined) {
+      this.Gps = `${locality}, ${street}`;
+      this.c.ubicacion
+
+    } else {
+      this.Gps = '';
+    }
   },
  
   methods: {
@@ -53,6 +62,19 @@ export default {
       this.$router.push('/Gps');
     },
     submitForm() {
+      //Estas son las varibles que me traigo de la ruta gps
+      const lat = this.$route.params.lat;
+      const lng = this.$route.params.lng;
+    const street = this.$route.params.street;
+    const locality = this.$route.params.locality;
+
+
+    //y aqui se agregan por cada envio
+    this.c.ubicacion = locality +" - "+ street
+      
+      this.c.latitud = lat;
+      this.c.longitud = lng;
+
       const dataToSend = Object.entries(this.c).reduce((acc, [key, value]) => {
         acc[key] = key === 'foto' ? value : String(value);
         return acc;
