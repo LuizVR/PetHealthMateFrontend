@@ -8,6 +8,7 @@ import Campaign from '../views/Campaigns.vue'
 import Registro from '../views/Registro.vue'
 import InfoMascota from '../views/EditarMascotas.vue'
 import Gps from '../views/Gps.vue'
+import ListaCampania from '../views/ListaCampanias.vue'
 
 const routes = [
   {
@@ -65,6 +66,11 @@ const routes = [
     name: 'Campania',
     component: Campaign,
     props: true,
+  },
+  {
+path :'/listacampa',
+name: 'ListaCampania',
+component: ListaCampania
   },
 ]
 
