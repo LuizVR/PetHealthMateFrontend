@@ -9,8 +9,8 @@ export default {
     return {
       Gps:'',
       c: {
-        titulo: '',
-        descripcion: '',
+        titulo: localStorage.getItem('titulo') || '',
+        descripcion: localStorage.getItem('descripcion') || '',
         ubicacion: '',
         latitud: '',
         longitud: '',
@@ -32,7 +32,8 @@ export default {
    
     if (locality !== undefined && street !== undefined) {
       this.Gps = `${locality}, ${street}`;
-      this.c.ubicacion
+      this.c.ubicacion = locality +" - "+ street
+    
 
     } else {
       this.Gps = '';
@@ -57,6 +58,7 @@ export default {
     },
     updateField(field, event) {
       this.c[field] = event.target.value;
+      localStorage.setItem(field, event.target.value); // Valores que manda
     },
     AbrirUbicacion(){
       this.$router.push('/Gps');
@@ -65,12 +67,10 @@ export default {
       //Estas son las varibles que me traigo de la ruta gps
       const lat = this.$route.params.lat;
       const lng = this.$route.params.lng;
-    const street = this.$route.params.street;
-    const locality = this.$route.params.locality;
 
 
-    //y aqui se agregan por cada envio
-    this.c.ubicacion = locality +" - "+ street
+
+    
       
       this.c.latitud = lat;
       this.c.longitud = lng;
