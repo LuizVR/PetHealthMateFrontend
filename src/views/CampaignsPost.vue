@@ -43,6 +43,4 @@
 </template>
 
 <script src="./js/CampaignsPostScript.js"></script>
-<style scoped src="./css/CampaingsPostStyle.css">
-
-</style>
+<style scoped src="./css/CampaingsPostStyle.css"></style>

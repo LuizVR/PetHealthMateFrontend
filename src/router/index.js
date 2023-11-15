@@ -10,6 +10,9 @@ import Gps from '../views/Gps.vue'
 import ListaCampania from '../views/ListaCampanias.vue'
 import Perfil from '../views/Perfil.vue'
 import ListCampaigns from '../views/ListCampaigns.vue'
+import InfoCampaigns from '../views/EditarCampaigns.vue'
+
+
 
 const routes = [
   {
@@ -77,6 +80,12 @@ const routes = [
     path: '/listCampania',
     name: 'ListCampaigns',
     component: ListCampaigns
+  },
+  {
+    path: '/campaigns/:campaign_Id',
+    name: 'InfoCampaigns',
+    component: InfoCampaigns,
+    props: true
   },
 ]
 const router = createRouter({

@@ -30,8 +30,8 @@ export default defineComponent({
       this.$router.push('/campaignsPost'); // Reemplaza 'ruta-a-tu-pagina' con la ruta a la que deseas redirigir
     },
 
-    goToPetDetails(pet_Id) {
-      this.$router.push({ name: 'InfoMascota', params: { pet_Id } });
+    goToPetDetails(campaign_Id) {
+      this.$router.push({ name: 'InfoCampaigns', params: { campaign_Id } });
     },
   }
 });
