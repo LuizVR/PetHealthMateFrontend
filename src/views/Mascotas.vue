@@ -12,7 +12,7 @@
             <ion-card-title>{{ pet.nombre }}</ion-card-title>
           </ion-card-header>
         </ion-card>
-        <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab class="floating-button" vertical="bottom" horizontal="end">
           <ion-fab-button @click="goToAddPetPage">
             <ion-icon :icon="add"></ion-icon>
           </ion-fab-button>
