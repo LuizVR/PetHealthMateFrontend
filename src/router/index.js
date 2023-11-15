@@ -8,7 +8,8 @@ import Registro from '../views/Registro.vue'
 import InfoMascota from '../views/EditarMascotas.vue'
 import Gps from '../views/Gps.vue'
 import ListaCampania from '../views/ListaCampanias.vue'
-import Perfil from '../views/Perfil.vue';
+import Perfil from '../views/Perfil.vue'
+import ListCampaigns from '../views/ListCampaigns.vue'
 
 const routes = [
   {
@@ -71,6 +72,11 @@ const routes = [
     path: '/perfil',
     name: 'Perfil',
     component: Perfil
+  },
+  {
+    path: '/listCampania',
+    name: 'ListCampaigns',
+    component: ListCampaigns
   },
 ]
 const router = createRouter({

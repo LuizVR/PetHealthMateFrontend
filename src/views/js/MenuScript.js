@@ -26,7 +26,7 @@ export default defineComponent({
     const menuItems = ref([
       { title: 'Mis mascotas', icon: paw, color: 'dark', page: '/mascotas' },
       { title: 'Calendario de la salud', icon: calendar, color: 'tertiary', page: '/calendar' },
-      { title: 'Campañas', icon: notifications, color: 'warning', page: '/campaigns' },
+      { title: 'Campañas', icon: notifications, color: 'warning', page: '/listCampania' },
       // Añade más elementos si los necesitas
     ]);
     
