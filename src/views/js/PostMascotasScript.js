@@ -12,7 +12,7 @@ export default {
         edad: null,
         peso: null,
         talla: '',
-        especie: '',
+        tipo: '',
         sexo: '',
         esterilizado: false,
       },

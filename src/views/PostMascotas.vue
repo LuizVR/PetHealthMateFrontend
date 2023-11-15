@@ -28,7 +28,7 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating">Especie</ion-label>
-          <ion-select v-model="form.especie" placeholder="Selecciona una especie">
+          <ion-select v-model="form.tipo" placeholder="Selecciona una especie">
           <ion-select-option value="perro">Perro</ion-select-option>
             <ion-select-option value="gato">Gato</ion-select-option>
           </ion-select>
@@ -41,9 +41,12 @@
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label>¿Esterilizado?</ion-label>
-          <ion-toggle v-model="form.esterilizado"></ion-toggle>
-        </ion-item>
+        <ion-label position="floating">¿Esterilizado?</ion-label>
+        <ion-select v-model="form.esterilizado" :value="form.esterilizado"  placeholder="Selecciona uno">
+          <ion-select-option value="Si">Si</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
         <ion-item>
           <ion-label position="stacked">Agrega una imagen</ion-label>
           <input type="file" @change="handleImageUpload" />
