@@ -29,7 +29,7 @@ export default defineComponent({
         nombre: "",
         correo: "",
         contrasenia: "",
-        foto: "@/img/foto_usuario.png"
+        foto: "/src/img/foto_preterminada.png"
       },
       correosRegistrados: [] // Lista para almacenar correos registrados
     };
@@ -59,7 +59,7 @@ export default defineComponent({
       }
     },
     async registrar() {
-this.usuario.foto = "ruta/a/tu/imagen.jpg";
+      this.usuario.foto = "/src/img/foto_preterminada.png";
       // Validaciones de entrada
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.usuario.correo.match(emailRegex)) {
@@ -106,7 +106,7 @@ this.usuario.foto = "ruta/a/tu/imagen.jpg";
       this.usuario.nombre = "";
       this.usuario.correo = "";
       this.usuario.contrasenia = "";
-      this.usuario.foto = "@/img/foto_usuario.png";
+      this.usuario.foto = "/src/img/foto_preterminada.png";
     },
     iniciarSesion() {
       this.$router.push("/login");

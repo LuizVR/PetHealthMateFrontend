@@ -1,18 +1,27 @@
 .background {
-  --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */}
-
-ion-card {
-  --background: #fff; /* Establece el color de fondo de las tarjetas */
+  --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+  
 }
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
 .user-icon {
   height: 50px; /* Ajusta según el tamaño que necesites */
   cursor: pointer;
+}
+ion-card {
+  --background: #fff; /* Establece el color de fondo de las tarjetas */
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+ion-toolbar{
+  color:#000000;
+  --background: #D2B48C;
+  font-family: 'Titulo'; 
+}
+ion-card{
+  font-family: 'Cuerpo';
+}
+.user-button{
+  --background: #D2B48C;
 }

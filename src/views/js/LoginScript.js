@@ -50,11 +50,11 @@ export default defineComponent({
         const response = await axios.post("https://localhost:44329/api/User/login", {
           correo: this.email,
           contrasenia: this.password,
+        }, {
+          withCredentials: true
         });
       
         if (response.status === 200) {
-          console.log(response.data)
-          Cookies.set("Uuid", response.data.uuid);
           // Las credenciales son válidas, redirige a la página de inicio
           this.$router.push('/menu');
         } else {

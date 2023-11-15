@@ -2,7 +2,6 @@
   --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
 }
 .contenido {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,4 +25,8 @@ ion-toolbar{
   color:#000000;
   --background: #D2B48C;
   font-family: 'Titulo';
+}
+img{
+  height: 250px;
+
 }
