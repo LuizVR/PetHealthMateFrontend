@@ -62,7 +62,7 @@ const routes = [
   },
   {
     path: '/campania/:lat/:lng/:street/:locality',
-    name: 'Campania',
+    name: 'CampaignPost',
     component: Campaign,
     props: true,
   },

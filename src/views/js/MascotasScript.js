@@ -20,14 +20,16 @@ export default defineComponent({
   methods: {
     async fetchPets() {
       try {
-        const response = await axios.get('https://localhost:44329/api/Pet'); // Reemplaza 'API_URL' con la URL de tu API
+        const response = await axios.get('https://localhost:44329/api/Pet', {
+          withCredentials: true, // Agrega la configuración de credenciales aquí
+        });
         this.pets = response.data;
       } catch (error) {
         console.error('Error fetching pets:', error);
       }
     },
     goToAddPetPage() {
-      this.$router.push('/postMascotas'); // Reemplaza 'ruta-a-tu-pagina' con la ruta a la que deseas redirigir
+      this.$router.push('/postMascotas');
     },
 
     goToPetDetails(pet_Id) {

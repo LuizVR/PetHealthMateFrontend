@@ -64,7 +64,7 @@ export default defineComponent({
       } catch (error) {
         console.log("Error al iniciar sesión:", error);
         console.log(error); // Imprime el objeto de error completo
-        this.mostrarAlerta("Error", "Correo electrónico o contraseña incorrectos.");
+        this.mostrarAlerta("Error", "Error de conexion");
       }     
     },
     irARegistro() {

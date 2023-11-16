@@ -138,7 +138,7 @@ setup(){
       
             // Envía datos a otra vista y navega a ella
             router.push({
-                name: 'Campania', // Reemplaza con el nombre de tu ruta
+                name: 'CampaignPost', // Reemplaza con el nombre de tu ruta
                 params: { lat, lng, street, locality },
               });
           })

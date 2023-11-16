@@ -22,6 +22,7 @@ export default defineComponent({
       try {
         const response = await axios.get('https://localhost:44329/api/Campaign'); // Reemplaza 'API_URL' con la URL de tu API
         this.camps = response.data;
+        console.log("Form Data:", this.camps);
       } catch (error) {
         console.error('Error fetching pets:', error);
       }

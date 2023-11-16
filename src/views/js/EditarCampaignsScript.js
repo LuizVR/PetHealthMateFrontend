@@ -71,6 +71,7 @@ import {
         try {
           const response = await axios.get(
             `https://localhost:44329/api/Campaign/${this.campaignId}`
+            
           );
           console.log('Campain Data:', response.data);
           this.form = { ...response.data };
