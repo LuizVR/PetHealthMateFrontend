@@ -31,11 +31,10 @@ export default defineComponent({
         contrasenia: "",
         foto: "/src/img/foto_preterminada.png"
       },
-      correosRegistrados: [] // Lista para almacenar correos registrados
+      correosRegistrados: []
     };
   },
   async created() {
-    // Cargar la lista de correos registrados al iniciar la página
     await this.cargarCorreosRegistrados();
   },
   methods: {
@@ -53,14 +52,13 @@ export default defineComponent({
     async cargarCorreosRegistrados() {
       try {
         const response = await axios.get("https://localhost:44329/api/User/emails");
-        this.correosRegistrados = response.data; // Almacena la lista de correos registrados
+        this.correosRegistrados = response.data;
       } catch (error) {
         console.error("Error al cargar correos registrados:", error);
       }
     },
     async registrar() {
       this.usuario.foto = "/src/img/foto_preterminada.png";
-      // Validaciones de entrada
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.usuario.correo.match(emailRegex)) {
         this.mostrarAlerta("Error", "Por favor, ingrese un correo electrónico válido.");
@@ -79,14 +77,12 @@ export default defineComponent({
         return;
       }
 
-      // Verificar si el correo ya está registrado
       if (this.correosRegistrados.includes(this.usuario.correo)) {
         this.mostrarAlerta("Error", "El correo electrónico ya está registrado.");
         return;
       }
 
       try {
-        // Realizar la solicitud de registro
         const response = await axios.post("https://localhost:44329/api/User", this.usuario, {
           headers: {
             "Content-Type": "application/json",

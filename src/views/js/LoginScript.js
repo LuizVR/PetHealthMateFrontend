@@ -1,7 +1,6 @@
 import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
-//import Cookies from 'js-cookie';
 
 export default defineComponent({
   name: 'LoginPage',
@@ -33,14 +32,12 @@ export default defineComponent({
       });
     },
     async iniciarSesion() {
-      // Validar el formato del correo electrónico
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!this.email.match(emailRegex)) {
         this.mostrarAlerta("Error", "Por favor, ingrese un correo electrónico válido.");
         return;
       }
 
-      // Validar la longitud de la contraseña
       if (this.password.length < 6 || this.password.length > 20) {
         this.mostrarAlerta("Error", "La contraseña debe tener entre 6 y 20 caracteres.");
         return;
@@ -55,20 +52,17 @@ export default defineComponent({
         });
       
         if (response.status === 200) {
-          // Las credenciales son válidas, redirige a la página de inicio
           this.$router.push('/menu');
         } else {
-          // Las credenciales son incorrectas, muestra un mensaje de error
           this.mostrarAlerta("Error", "Correo electrónico o contraseña incorrectos.");
         }
       } catch (error) {
         console.log("Error al iniciar sesión:", error);
-        console.log(error); // Imprime el objeto de error completo
+        console.log(error); 
         this.mostrarAlerta("Error", "Error de conexion");
       }     
     },
     irARegistro() {
-      // Redirigir a la página de registro
       this.$router.push('/registro');
     },
   },

@@ -11,8 +11,7 @@ import ListaCampania from '../views/ListaCampanias.vue'
 import Perfil from '../views/Perfil.vue'
 import ListCampaigns from '../views/ListCampaigns.vue'
 import InfoCampaigns from '../views/EditarCampaigns.vue'
-
-
+import EditarPerfil from '../views/EditarPerfil.vue'
 
 const routes = [
   {
@@ -86,6 +85,11 @@ const routes = [
     name: 'InfoCampaigns',
     component: InfoCampaigns,
     props: true
+  },
+  {
+    path: '/perfil/editar',
+    name: 'EditarPerfil',
+    component: EditarPerfil,
   },
 ]
 const router = createRouter({

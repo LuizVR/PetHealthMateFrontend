@@ -14,19 +14,39 @@
   --placeholder-opacity: 0.5;
   width: 250px;
   margin: 10px;
-  font-family: 'Cuerpo';
+  font-family: "Cuerpo";
   --border-width: 0;
   --background: transparent;
   height: 45px !important;
   min-height: 45px !important;
 }
 
-ion-toolbar{
-  color:#000000;
-  --background: #D2B48C;
-  font-family: 'Titulo';
+ion-toolbar {
+  color: #000000;
+  --background: #d2b48c;
+  font-family: "Titulo";
 }
-img{
-  height: 250px;
-
+img {
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
 }
+.editar-button {
+  --background: #d2b48c;
+  --border-radius: 20px;
+  color: #000000;
+  margin-top: 25px;
+  font-family: "Cuerpo";
+}
+.carga-imagen{
+  margin-left: 110px;
+  margin-top: 10px;
+  color: #000000;
+  font-family: "Cuerpo";
+  font-size: smaller;
+  --border-width: 0;
+    --border-color: transparent;
+    --highlight-color-focused: transparent;
+  }

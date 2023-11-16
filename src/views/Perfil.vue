@@ -2,6 +2,9 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
         <ion-title class="ion-text-center">Perfil</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -14,9 +17,7 @@
         <ion-input class="custom" label="Correo" label-placement="floating" fill="solid" color="custom"
           v-model="userData.correo" :readonly="true" required>
         </ion-input>
-        <ion-input class="custom" label="Contraseña" label-placement="floating" fill="solid" color="custom"
-          v-model="userData.contrasenia" type="password" :readonly="true" required>
-        </ion-input>
+        <ion-button @click="irAEditar" class="editar-button">Editar</ion-button>
       </div>
     </ion-content>
   </ion-page>
