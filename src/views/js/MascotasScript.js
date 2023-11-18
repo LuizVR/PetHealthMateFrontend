@@ -19,10 +19,17 @@ export default defineComponent({
   },
   methods: {
     async fetchPets() {
+      // Recuperar el uid del localStorage
+      const userUuid = localStorage.getItem('uuid');
+      if (!userUuid) {
+        console.error('UID no encontrado');
+        return;
+      }
+  
       try {
-        const response = await axios.get('https://localhost:44329/api/Pet', {
-          withCredentials: true, // Agrega la configuración de credenciales aquí
-        });
+        // Incluir el uid en la solicitud a la API
+        var uri = "https://localhost:44329/api/Pet/mismascotas/"
+        const response = await axios.get(uri+userUuid);
         this.pets = response.data;
       } catch (error) {
         console.error('Error fetching pets:', error);
@@ -31,7 +38,7 @@ export default defineComponent({
     goToAddPetPage() {
       this.$router.push('/postMascotas');
     },
-
+  
     goToPetDetails(pet_Id) {
       this.$router.push({ name: 'InfoMascota', params: { pet_Id } });
     },

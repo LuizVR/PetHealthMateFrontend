@@ -37,21 +37,23 @@ export default defineComponent({
         this.mostrarAlerta("Error", "Por favor, ingrese un correo electrónico válido.");
         return;
       }
-
+    
       if (this.password.length < 6 || this.password.length > 20) {
         this.mostrarAlerta("Error", "La contraseña debe tener entre 6 y 20 caracteres.");
         return;
       }
-
+    
       try {
         const response = await axios.post("https://localhost:44329/api/User/login", {
           correo: this.email,
           contrasenia: this.password,
-        }, {
-          withCredentials: true
         });
       
         if (response.status === 200) {
+          // Almacenar el uid y el token en el localStorage
+          localStorage.setItem("uuid", response.data.uuid);
+          localStorage.setItem("token", response.data.token);
+    
           this.$router.push('/menu');
         } else {
           this.mostrarAlerta("Error", "Correo electrónico o contraseña incorrectos.");

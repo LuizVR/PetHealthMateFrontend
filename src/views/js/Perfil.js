@@ -28,7 +28,13 @@ export default defineComponent({
   },
   methods: {
     loadDataFromBackend() {
-      axios.get('https://localhost:44329/api/User/details', { withCredentials: true })
+      const uid = localStorage.getItem('uuid');
+      if (!uid) {
+        console.error('UID no encontrado');
+        return;
+      }
+      var uri = "https://localhost:44329/api/User/details/"
+      axios.get(uri+uid)
         .then(response => {
           this.userData.nombre = response.data.nombre;
           this.userData.correo = response.data.correo;
