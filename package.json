@@ -12,6 +12,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@capacitor/storage": "^1.2.5",
     "@ionic/vue": "^7.5.4",
     "@ionic/vue-router": "^7.5.4",
     "axios": "^1.6.2",

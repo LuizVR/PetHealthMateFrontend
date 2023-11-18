@@ -1,6 +1,7 @@
 import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, alertController } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
+import {Storage} from '@capacitor/storage';
 
 export default defineComponent({
   name: 'LoginPage',
@@ -51,8 +52,8 @@ export default defineComponent({
       
         if (response.status === 200) {
           // Almacenar el uid y el token en el localStorage
-          localStorage.setItem("uuid", response.data.uuid);
-          localStorage.setItem("token", response.data.token);
+          await Storage.set({ key: 'uid', value: response.data.uuid})
+          await Storage.set({ key: 'token', value: response.data.token})
     
           this.$router.push('/menu');
         } else {

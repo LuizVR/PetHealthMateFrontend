@@ -1,6 +1,7 @@
 import { IonPage, IonInput, IonHeader, IonToolbar, IonTitle, IonContent, IonButton} from '@ionic/vue';
 import { defineComponent } from 'vue';
 import axios from 'axios';
+import {Storage} from '@capacitor/storage';
 
 export default defineComponent({
   name: 'PerfilPage',
@@ -27,14 +28,16 @@ export default defineComponent({
     this.loadDataFromBackend();
   },
   methods: {
-    loadDataFromBackend() {
-      const uid = localStorage.getItem('uuid');
-      if (!uid) {
+    async loadDataFromBackend() {
+      const uidData = await Storage.get({key: 'uid'});
+      const userUuid = uidData.value;
+
+      if (!userUuid) {
         console.error('UID no encontrado');
         return;
       }
       var uri = "https://localhost:44329/api/User/details/"
-      axios.get(uri+uid)
+      axios.get(uri+userUuid)
         .then(response => {
           this.userData.nombre = response.data.nombre;
           this.userData.correo = response.data.correo;

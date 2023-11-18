@@ -2,6 +2,7 @@ import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardH
 import { add } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 import axios from 'axios';
+import {Storage} from '@capacitor/storage';
 
 export default defineComponent({
   name: 'PetCard',
@@ -20,7 +21,9 @@ export default defineComponent({
   methods: {
     async fetchPets() {
       // Recuperar el uid del localStorage
-      const userUuid = localStorage.getItem('uuid');
+      const uidData = await Storage.get({key: 'uid'});
+      const userUuid = uidData.value;
+
       if (!userUuid) {
         console.error('UID no encontrado');
         return;
