@@ -87,17 +87,19 @@ export default defineComponent({
         correo: this.userData.correo,
         foto: this.userData.imagen,
       };
-      
+    
       const uidData = await Storage.get({key: 'uid'});
       const userUuid = uidData.value;
-
+    
       if (!userUuid) {
         console.error('UID no encontrado');
         return;
       }
-      var uri = "https://localhost:44329/api/User/edit"
+    
+      var uri = "https://localhost:44329/api/User/edit";
+    
       // Realiza la solicitud HTTP con Axios
-      axios.put(uri+userUuid, datosParaGuardar)
+      axios.put(`${uri}?userUuid=${userUuid}`, datosParaGuardar)
         .then(response => {
           // Actualiza el estado con los nuevos datos
           this.userData.nombre = response.data.nombre;
