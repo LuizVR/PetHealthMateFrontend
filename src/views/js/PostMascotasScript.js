@@ -36,25 +36,26 @@ export default {
         // Recuperar el UID del localStorage
         const uidData = await Storage.get({ key: 'uid' });
         const userUuid = uidData.value;
-
         if (!userUuid) {
           console.error('UID no encontrado');
           return;
         }
 
-        // Convierte todos los valores del formulario a strings
-        const dataToSend = Object.entries(this.form).reduce((acc, [key, value]) => {
-          // Convierte todo a string, excepto la imagen que ya está en base64
-          acc[key] = key === 'foto' ? value : String(value);
-          return acc;
-        }, {});
+       // Ajustar la URL de la solicitud POST
+       const apiUrl = `https://localhost:44329/api/Pet/${userUuid}`;
+       // Convierte todos los valores del formulario a strings
+       const dataToSend = Object.entries(this.form).reduce((acc, [key, value]) => {
+         // Convierte todo a string, excepto la imagen que ya está en base64
+         acc[key] = key === 'foto' ? value : String(value);
+         return acc;
+       }, {});
+       // Realiza la solicitud POST a la API con el UID en la URL
+       const response = await axios.post(apiUrl, dataToSend, {
+         headers: {
+           'Content-Type': 'application/json'
+         }
+       });
 
-        // Realiza la solicitud POST a la API
-        const response = await axios.post('https://localhost:44329/api/Pet', dataToSend, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
 
         // Maneja la respuesta aquí
         console.log(response.data);
