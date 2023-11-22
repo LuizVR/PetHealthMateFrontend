@@ -12,6 +12,7 @@ import Perfil from '../views/Perfil.vue'
 import ListCampaigns from '../views/ListCampaigns.vue'
 import InfoCampaigns from '../views/EditarCampaigns.vue'
 import EditarPerfil from '../views/EditarPerfil.vue'
+import Calendario from '../views/Calendario.vue'
 
 const routes = [
   {
@@ -90,6 +91,11 @@ const routes = [
     path: '/perfil/editar',
     name: 'EditarPerfil',
     component: EditarPerfil,
+  },
+  {
+    path: '/calendar',
+    name: 'Calendario',
+    component: Calendario,
   },
 ]
 const router = createRouter({
