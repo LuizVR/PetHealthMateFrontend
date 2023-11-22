@@ -13,6 +13,8 @@ import ListCampaigns from '../views/ListCampaigns.vue'
 import InfoCampaigns from '../views/EditarCampaigns.vue'
 import EditarPerfil from '../views/EditarPerfil.vue'
 import Calendario from '../views/Calendario.vue'
+import PostCalendario from '../views/PostCalendario.vue'
+
 
 const routes = [
   {
@@ -96,6 +98,17 @@ const routes = [
     path: '/calendar',
     name: 'Calendario',
     component: Calendario,
+  },
+  {
+    path: '/postCalendar',
+    name: 'PostCalendario',
+    component: PostCalendario,
+  },
+  {
+    path: '/calendar/:pet_Id',
+    name: 'PostCalendario',
+    component: PostCalendario,
+    props: true
   },
 ]
 const router = createRouter({
