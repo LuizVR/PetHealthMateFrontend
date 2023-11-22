@@ -13,7 +13,7 @@
           </ion-card-header>
         </ion-card>
         <ion-fab class="floating-button" vertical="bottom" horizontal="end">
-          <ion-fab-button @click="goToAddPetPage">
+          <ion-fab-button @click="goToCalendar">
             <ion-icon :icon="calendarIcon"></ion-icon>
           </ion-fab-button>
         </ion-fab>

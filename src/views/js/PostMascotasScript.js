@@ -42,9 +42,6 @@ export default {
           return;
         }
 
-        // Ajustar la URL de la solicitud POST
-        const apiUrl = `https://localhost:44329/api/Pet/${userUuid}`;
-
         // Convierte todos los valores del formulario a strings
         const dataToSend = Object.entries(this.form).reduce((acc, [key, value]) => {
           // Convierte todo a string, excepto la imagen que ya está en base64
@@ -52,8 +49,8 @@ export default {
           return acc;
         }, {});
 
-        // Realiza la solicitud POST a la API con el UID en la URL
-        const response = await axios.post(apiUrl, dataToSend, {
+        // Realiza la solicitud POST a la API
+        const response = await axios.post('https://localhost:44329/api/Pet', dataToSend, {
           headers: {
             'Content-Type': 'application/json'
           }
