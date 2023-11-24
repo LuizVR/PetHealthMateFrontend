@@ -126,6 +126,7 @@ export default defineComponent({
         .then((response) => {
           console.log("Mascota eliminada exitosamente:", response.data);
           this.closeDeleteModal(); // Cierra el modal después de eliminar la mascota
+          this.$router.push('/mascotas'); // Redirige a la ruta "/mascotas"
           // Puedes redirigir a otra página o realizar alguna acción adicional después de la eliminación
         })
         .catch((error) => {
