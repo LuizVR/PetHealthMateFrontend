@@ -15,6 +15,7 @@ import EditarPerfil from '../views/EditarPerfil.vue'
 import Calendario from '../views/Calendario.vue'
 import PostCalendario from '../views/PostCalendario.vue'
 import GetCalendario from '../views/GetCalendario.vue'
+import GetCitas from '../views/GetCitas.vue'
 
 const routes = [
   {
@@ -114,6 +115,17 @@ const routes = [
     path: '/detalleCita',
     name: 'GetCalendario',
     component: GetCalendario,
+  },
+  {
+    path: '/getCitas',
+    name: 'GetCitas',
+    component: GetCitas,
+  },
+  {
+    path: '/getCitas/:pet_Id',
+    name: 'GetCitas',
+    component: GetCitas,
+    props: true
   },
 ]
 const router = createRouter({

@@ -1,0 +1,40 @@
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      petId: null,
+      dates: [],
+    };
+  },
+  mounted() {
+    // Obtener el petId de la URL
+    this.petId = this.$route.params.pet_Id;
+
+    // Llamar a la API para obtener los datos
+    this.getData();
+  },
+  methods: {
+    async getData() {
+      try {
+        const response = await axios.get(`https://localhost:44329/api/Date/byPetId/${this.petId}`);
+        this.dates = response.data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    formatDate(dateString) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString('es-ES', options);
+    },
+    async eliminarCita(date) {
+        try {
+          // Aquí deberías hacer la llamada a la API para eliminar la cita
+          // Puedes utilizar axios.delete y proporcionar la URL correcta para eliminar la cita
+          console.log('Eliminando cita:', date);
+        } catch (error) {
+          console.error('Error deleting data:', error);
+        }
+    },
+  },
+};

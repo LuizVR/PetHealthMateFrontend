@@ -41,7 +41,7 @@ export default defineComponent({
     },
   
     goToPetDetails(pet_Id) {
-      this.$router.push({ name: 'PostCalendario', params: { pet_Id } });
+      this.$router.push({ name: 'GetCitas', params: { pet_Id } });
     },
   }
 });
