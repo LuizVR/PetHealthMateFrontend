@@ -1,53 +1,71 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon } from '@ionic/vue';
-import { add } from 'ionicons/icons';
-import { defineComponent, ref } from 'vue';
-import axios from 'axios';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonCard,
+  IonCardHeader,
+  IonCardTitle,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from "@ionic/vue";
+import { add } from "ionicons/icons";
+import { defineComponent, ref } from "vue";
+import axios from "axios";
 
 export default defineComponent({
-  name: 'ListCampaigns',
+  name: "ListCampaigns",
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon
+    IonPage,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonFab,
+    IonFabButton,
+    IonIcon,
   },
   data() {
     return {
-      kilometro:0,
+      kilometro: 0,
       camps: [],
       ubicacionObtenida: false,
       ubicacionActual: null,
 
-      
       rango: 0,
       ubicacionesFiltradas: [],
-      add
+      add,
     };
   },
   created() {
-   this.fetchPets();
-   
+    this.fetchPets();
   },
   mounted() {
     this.fetchPets();
-    
   },
 
   methods: {
-   
-    
     async fetchPets() {
       try {
-        const response = await axios.get('https://localhost:44329/api/Campaign');
+        const response = await axios.get(
+          "https://localhost:44329/api/Campaign"
+        );
         this.camps = response.data;
         this.ubicacionesFiltradas = this.camps;
         //console.log(this.ubicacionesFiltradas);
         window.location.reload(); // Recargar la página
       } catch (error) {
-        console.error('Error fetching pets:', error);
+        console.error("Error fetching pets:", error);
       }
     },
-    
+
     obtenerUbicacion() {
-      
-      if ('geolocation' in navigator) {
+      if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             const { latitude, longitude } = position.coords;
@@ -55,23 +73,38 @@ export default defineComponent({
             this.ubicacionObtenida = true;
           },
           (error) => {
-            console.error('Error al obtener la ubicación:', error);
+            console.error("Error al obtener la ubicación:", error);
           }
         );
       } else {
-        console.error('El navegador no soporta la geolocalización.');
+        console.error("El navegador no soporta la geolocalización.");
       }
     },
-    
+
     async obtenerUbicacionesEnRango(ubicacionActual, rango) {
       if (rango === 0 || rango === null) {
-        
         this.fetchPets();
-        console.log('El rango es 0 o null');
+        console.log("El rango es 0 o null");
         // Realizar otra acción aquí...
       } else {
         if (this.camps.length > 0) {
-          const selectedFields = this.camps.map(({ latitud, longitud, foto, titulo, campaign_Id, descripcion }) => ({ lat: latitud, lon: longitud, foto, titulo,campaign_Id, descripcion }));
+          const selectedFields = this.camps.map(
+            ({
+              latitud,
+              longitud,
+              foto,
+              titulo,
+              campaign_Id,
+              descripcion,
+            }) => ({
+              lat: latitud,
+              lon: longitud,
+              foto,
+              titulo,
+              campaign_Id,
+              descripcion,
+            })
+          );
           const ubicacionesFiltradas = selectedFields.filter((ubicacion) => {
             const distancia = this.calcularDistancia(
               ubicacionActual.latitude,
@@ -85,21 +118,18 @@ export default defineComponent({
         }
       }
     },
-    
 
     async filtrarPorRango() {
       if (this.ubicacionActual) {
-
         //console.log("estas en filtrar");
 
-
-       // console.log(this.kilometro);
+        // console.log(this.kilometro);
 
         await this.fetchPets(); // Obtener los datos de las campañas
         this.obtenerUbicacionesEnRango(this.ubicacionActual, this.rango); // Llamar a la función de filtrado
       }
     },
-    
+
     calcularDistancia(lat1, lon1, lat2, lon2) {
       // Fórmula haversine para calcular la distancia entre dos puntos en la Tierra
       const radioTierra = 6371; // Radio medio de la Tierra en kilómetros
@@ -120,13 +150,12 @@ export default defineComponent({
       return deg * (Math.PI / 180);
     },
 
-
     goToAddPetPage() {
-      this.$router.push('/campaignsPost'); // Reemplaza 'ruta-a-tu-pagina' con la ruta a la que deseas redirigir
+      this.$router.push("/campaignsPost"); // Reemplaza 'ruta-a-tu-pagina' con la ruta a la que deseas redirigir
     },
 
     goToPetDetails(campaign_Id) {
-      this.$router.push({ name: 'InfoCampaigns', params: { campaign_Id } });
+      this.$router.push({ name: "InfoCampaigns", params: { campaign_Id } });
     },
-  }
+  },
 });
