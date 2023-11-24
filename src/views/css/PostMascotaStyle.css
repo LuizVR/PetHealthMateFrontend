@@ -1,0 +1,20 @@
+.background {
+    --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+    
+  }
+  ion-toolbar{
+    color:#000000;
+    --background: #D2B48C;
+    font-family: 'Titulo'; 
+  }
+  ion-input {
+    color: black;
+  }
+  ion-button {
+    display: block;
+    margin: 10px auto; /* Ajusta la cantidad de espacio arriba y abajo según tus necesidades */
+    background-color: #ffffff00; /* Cambia #000 al color que desees en formato hexadecimal o nombre del color */
+    color: #000; /* Cambia #fff al color del texto que desees */
+    padding: 8px 16px; /* Ajusta el relleno para cambiar el tamaño del botón */
+  }
+  

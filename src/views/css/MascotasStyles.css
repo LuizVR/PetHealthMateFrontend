@@ -1,9 +1,18 @@
+.background {
+  --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+  
+}
+ion-toolbar{
+  color:#000000;
+  --background: #D2B48C;
+  font-family: 'Titulo'; 
+}
 ion-card {
     margin: 10px;
   }
   
   ion-card-header {
-    background-color: #FFA726; /* Color de fondo para el header */
+    background-color: #D2B48C; /* Color de fondo para el header */
     color: white; /* Color del texto */
   }
   

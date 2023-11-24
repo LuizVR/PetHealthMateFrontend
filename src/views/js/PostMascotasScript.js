@@ -16,8 +16,10 @@ export default {
         tipo: '',
         sexo: '',
         esterilizado: false,
+        
       },
       imageFile: null,
+      showModal: false,
     };
   },
   methods: {

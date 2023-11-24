@@ -1,11 +1,11 @@
 <template>
-    <ion-page>
+    <ion-page class="mascotas-view">
       <ion-header>
         <ion-toolbar>
           <ion-title>Mis Mascotas</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
+      <ion-content :fullscreen="true" class="background">
         <ion-card v-for="pet in pets" :key="pet.pet_Id"  @click="goToPetDetails(pet.pet_Id)">
           <ion-card-header>
             <img :src="pet.foto" />
