@@ -16,6 +16,7 @@ import Calendario from '../views/Calendario.vue'
 import PostCalendario from '../views/PostCalendario.vue'
 import GetCalendario from '../views/GetCalendario.vue'
 import GetCitas from '../views/GetCitas.vue'
+import Contraseña from '../views/Contraseña.vue'
 
 const routes = [
   {
@@ -127,6 +128,11 @@ const routes = [
     component: GetCitas,
     props: true
   },
+  {
+    path: '/restablecer',
+    name: 'Contraseña',
+    component: Contraseña,
+  }
 ]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
