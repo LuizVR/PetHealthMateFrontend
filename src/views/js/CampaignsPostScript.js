@@ -7,7 +7,8 @@ export default {
   },
   data() {
     return {
-      Gps:'',
+      Gps: '',
+      camposCompletos: false,
       c: {
         titulo: localStorage.getItem('titulo') || '',
         descripcion: localStorage.getItem('descripcion') || '',
@@ -21,20 +22,12 @@ export default {
     };
   },
   mounted() {
-    
-
-    // estas son las varibles que se pintan en el input pero aun hay un detalle.
     const street = this.$route.params.street;
     const locality = this.$route.params.locality;
 
-    
-    
-   
     if (locality !== undefined && street !== undefined) {
       this.Gps = `${locality}, ${street}`;
-      this.c.ubicacion = locality +" - "+ street
-    
-
+      this.c.ubicacion = locality + " - " + street;
     } else {
       this.Gps = '';
     }
@@ -58,20 +51,16 @@ export default {
     },
     updateField(field, event) {
       this.c[field] = event.target.value;
-      localStorage.setItem(field, event.target.value); // Valores que manda
+      localStorage.setItem(field, event.target.value);
+      this.camposCompletos = Object.values(this.c).every(value => value !== '');
     },
-    AbrirUbicacion(){
+    AbrirUbicacion() {
       this.$router.push('/Gps');
     },
     submitForm() {
-      //Estas son las varibles que me traigo de la ruta gps
       const lat = this.$route.params.lat;
       const lng = this.$route.params.lng;
 
-
-
-    
-      
       this.c.latitud = lat;
       this.c.longitud = lng;
 
@@ -87,12 +76,12 @@ export default {
           'Content-Type': 'application/json'
         }
       })
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+        .then(response => {
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     },
   },
 };
