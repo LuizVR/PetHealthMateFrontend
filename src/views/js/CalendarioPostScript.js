@@ -1,9 +1,9 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput, IonSelect, IonSelectOption } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
 import axios from 'axios';
 
 export default {
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput, IonSelect, IonSelectOption
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption
   },
   data() {
     return {
@@ -13,6 +13,11 @@ export default {
       },
       petId: null,
     };
+  },
+  computed: {
+    isButtonDisabled() {
+      return !this.form.fecha || !this.form.motivo;
+    },
   },
   mounted() {
     this.petId = this.$route.params.pet_Id;

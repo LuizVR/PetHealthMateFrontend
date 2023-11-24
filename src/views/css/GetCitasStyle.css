@@ -1,0 +1,15 @@
+.custom-background {
+    --background: url("@/img/fondo_huellas.jpg") 0 0/ 100% 100% no-repeat; /* Ruta de la imagen de fondo */
+  
+}
+ion-toolbar{
+    color:#000000;
+    --background: #D2B48C;
+    font-family: 'Titulo'; 
+  }
+
+  .custom-card {
+    background-color: #D2B48C;
+    border-radius: 10px;
+    margin: 10px;
+  }

@@ -5,11 +5,10 @@
         <ion-title>Registra tu cita</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
+    <ion-content class="custom-background">
       <div class="ion-text-center">
         <!-- Calendario grande -->
-        <ion-item>
-        <ion-label position="floating">Fecha</ion-label>
+        <ion-item color="#">
         <ion-datetime
         :value="form.fecha"
           display-format="YYYY-MM-DDTHH:mm"
@@ -18,17 +17,17 @@
       </ion-item>
 
         <!-- v-select para motivo -->
-        <ion-item>
-          <ion-label position="stacked">Motivo</ion-label>
-          <ion-select v-model="form.motivo" placeholder="Selecciona un motivo" @ionChange="handleFormChange">
-    <ion-select-option value="revision">Revision general</ion-select-option>
-    <ion-select-option value="vacuna">Dia de vacuna</ion-select-option>
-    <ion-select-option value="baño">Baño</ion-select-option>
+        <ion-item color="#">
+          <ion-label position="stacked" style="color: black;">Motivo</ion-label>
+          <ion-select v-model="form.motivo" placeholder="Selecciona un motivo" @ionChange="handleFormChange" style="color: black;">
+    <ion-select-option value="Revision general">Revision general</ion-select-option>
+    <ion-select-option value="Dia de vacuna">Dia de vacuna</ion-select-option>
+    <ion-select-option value="Baño">Baño</ion-select-option>
   </ion-select>
         </ion-item>
 
         <!-- Botón Guardar abajo -->
-        <ion-button expand="full" @click="submitForm" style="margin-top: 20px;">Guardar</ion-button>
+        <ion-button expand="full" @click="submitForm" :disabled="isButtonDisabled" style="margin-top: 20px;">Guardar</ion-button>
       </div>
     </ion-content>
   </ion-page>
