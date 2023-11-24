@@ -20,10 +20,10 @@
         <!-- v-select para motivo -->
         <ion-item>
           <ion-label position="stacked">Motivo</ion-label>
-          <ion-select :value="form.motivo" placeholder="Selecciona un motivo" @ionChange="handleFormChange">
-    <ion-select-option value="opcion1">Revision general</ion-select-option>
-    <ion-select-option value="opcion2">Dia de vacuna</ion-select-option>
-    <ion-select-option value="opcion3">Baño</ion-select-option>
+          <ion-select v-model="form.motivo" placeholder="Selecciona un motivo" @ionChange="handleFormChange">
+    <ion-select-option value="revision">Revision general</ion-select-option>
+    <ion-select-option value="vacuna">Dia de vacuna</ion-select-option>
+    <ion-select-option value="baño">Baño</ion-select-option>
   </ion-select>
         </ion-item>
 

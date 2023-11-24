@@ -1,6 +1,10 @@
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput, IonSelect, IonSelectOption } from '@ionic/vue';
 import axios from 'axios';
 
 export default {
+  components: {
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonInput, IonSelect, IonSelectOption
+  },
   data() {
     return {
       form: {
@@ -51,6 +55,6 @@ export default {
       const fechaSeleccionada = event.detail.value;
       console.log('Fecha seleccionada:', fechaSeleccionada);
       this.form.fecha = fechaSeleccionada;
-    },
+    }    
   },
 };

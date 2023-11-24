@@ -14,7 +14,7 @@ import InfoCampaigns from '../views/EditarCampaigns.vue'
 import EditarPerfil from '../views/EditarPerfil.vue'
 import Calendario from '../views/Calendario.vue'
 import PostCalendario from '../views/PostCalendario.vue'
-
+import GetCalendario from '../views/GetCalendario.vue'
 
 const routes = [
   {
@@ -109,6 +109,11 @@ const routes = [
     name: 'PostCalendario',
     component: PostCalendario,
     props: true
+  },
+  {
+    path: '/detalleCita',
+    name: 'GetCalendario',
+    component: GetCalendario,
   },
 ]
 const router = createRouter({
