@@ -10,6 +10,12 @@
             class="user-icon"
           />
           <ion-title>Actividades</ion-title>
+          <img
+            src="/src/img/icons/cerrar_sesion.png"
+            alt="User Profile"
+            @click="goToExit"
+            class="user-icon"
+          />
         </div>
       </ion-toolbar>
     </ion-header>

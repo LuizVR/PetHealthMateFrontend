@@ -68,5 +68,8 @@ export default defineComponent({
     irARegistro() {
       this.$router.push('/registro');
     },
+    recuperarContraseña(){
+      this.$router.push('/restablecer');
+    }
   },
 });

@@ -27,7 +27,6 @@ export default defineComponent({
       { title: 'Mis mascotas', icon: paw, color: 'dark', page: '/mascotas' },
       { title: 'Calendario de la salud', icon: calendar, color: 'tertiary', page: '/calendar' },
       { title: 'Campañas', icon: notifications, color: 'warning', page: '/listCampania' },
-      // Añade más elementos si los necesitas
     ]);
     
     const openPage = (page) => {
@@ -46,8 +45,12 @@ export default defineComponent({
   },
   methods: {
     goToUserProfile() {
-      // Redirigir a la página de registro
       this.$router.push('/perfil');
     },
+    goToExit() {
+      localStorage.removeItem('CapacitorStorage.uid');
+      localStorage.removeItem('CapacitorStorage.token');
+      this.$router.push('/');
+    }    
   }
 });
