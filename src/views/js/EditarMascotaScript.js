@@ -15,7 +15,7 @@ import {
   IonSelectOption,
   IonToggle, 
   IonSelect,
-  IonItem
+  IonItem, IonImg
 } from "@ionic/vue";
 import axios from "axios";
 import { trash } from "ionicons/icons";
@@ -39,7 +39,7 @@ export default defineComponent({
     IonSelect,
     IonSelectOption,
     IonToggle,
-    IonItem
+    IonItem, IonImg
   },
   data() {
     return {
@@ -56,6 +56,7 @@ export default defineComponent({
       },
       petId: null,
       showDeleteModal: false,
+      
     };
   },
   created() {
@@ -104,6 +105,7 @@ export default defineComponent({
         }
 
         await axios.put(url, petData);
+        this.$router.push('/mascotas');
         // Tratar el éxito de la actualización
       } catch (error) {
         console.error("Error updating pet:", error);

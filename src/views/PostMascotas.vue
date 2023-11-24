@@ -49,7 +49,7 @@
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="stacked" style="color: black;">Agrega una imagen</ion-label>
-        <input type="file" @change="handleImageUpload" />
+        <input type="file" @change="handleImageUpload" style="color: black;"/>
       </ion-item>
       <ion-button @click="submitForm">Guardar</ion-button>
         </ion-content>
