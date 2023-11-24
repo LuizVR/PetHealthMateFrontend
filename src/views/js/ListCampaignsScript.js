@@ -22,8 +22,14 @@ export default defineComponent({
     };
   },
   created() {
-   // this.fetchPets();
+   this.fetchPets();
+   
   },
+  mounted() {
+    this.fetchPets();
+    
+  },
+
   methods: {
    
     
@@ -31,12 +37,15 @@ export default defineComponent({
       try {
         const response = await axios.get('https://localhost:44329/api/Campaign');
         this.camps = response.data;
+        this.ubicacionesFiltradas = this.camps;
+        //console.log(this.ubicacionesFiltradas);
       } catch (error) {
         console.error('Error fetching pets:', error);
       }
     },
     
     obtenerUbicacion() {
+      
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -54,34 +63,36 @@ export default defineComponent({
     },
     
     async obtenerUbicacionesEnRango(ubicacionActual, rango) {
-      if (this.camps.length > 0) {
-        const selectedFields = this.camps.map(({ latitud, longitud, foto, titulo, campaign_Id, descripcion }) => ({ lat: latitud, lon: longitud, foto, titulo,campaign_Id, descripcion }));
-        console.log(selectedFields);
-        console.log(rango);
-        console.log("Metodo obtenerUbicaciones");
-        const ubicacionesFiltradas = selectedFields.filter((ubicacion) => {
-          const distancia = this.calcularDistancia(
-            ubicacionActual.latitude,
-            ubicacionActual.longitude,
-            ubicacion.lat,
-            ubicacion.lon
-          );
-          console.log(`Distancia: ${distancia}, Rango: ${rango}`);
-          return distancia <= rango;
-        });
-    
-        this.ubicacionesFiltradas = ubicacionesFiltradas; // Modificar this.camps con las campañas filtradas
-        console.log(ubicacionesFiltradas);
+      if (rango === 0 || rango === null) {
+        
+        this.fetchPets();
+        console.log('El rango es 0 o null');
+        // Realizar otra acción aquí...
+      } else {
+        if (this.camps.length > 0) {
+          const selectedFields = this.camps.map(({ latitud, longitud, foto, titulo, campaign_Id, descripcion }) => ({ lat: latitud, lon: longitud, foto, titulo,campaign_Id, descripcion }));
+          const ubicacionesFiltradas = selectedFields.filter((ubicacion) => {
+            const distancia = this.calcularDistancia(
+              ubicacionActual.latitude,
+              ubicacionActual.longitude,
+              ubicacion.lat,
+              ubicacion.lon
+            );
+            return distancia <= rango;
+          });
+          this.ubicacionesFiltradas = ubicacionesFiltradas;
+        }
       }
     },
+    
 
     async filtrarPorRango() {
       if (this.ubicacionActual) {
 
-        console.log("estas en filtrar");
+        //console.log("estas en filtrar");
 
 
-        console.log(this.kilometro);
+       // console.log(this.kilometro);
 
         await this.fetchPets(); // Obtener los datos de las campañas
         this.obtenerUbicacionesEnRango(this.ubicacionActual, this.rango); // Llamar a la función de filtrado

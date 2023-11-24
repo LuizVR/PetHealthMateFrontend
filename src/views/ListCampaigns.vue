@@ -2,28 +2,29 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Busca campañas cerca de tu zona</ion-title>
+        <ion-title class="ion-text-center">Busca campañas cerca de tu zona</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-      <ion-button @click="obtenerUbicacion">Obtener Ubicación</ion-button>
+    <ion-content  :fullscreen="true" class="background" >
+      <ion-button @click="obtenerUbicacion" class="btnUbi">Obtener Ubicación</ion-button>
 
-      <div v-if="ubicacionObtenida">
+      <div v-if="ubicacionObtenida" class="section1">
         <ion-form class="ubicacion">
           <ion-label class="InputUbicacion" for="rango">Ingrese el rango en kilómetros:</ion-label>
-          <input type="number" id="rango" v-model="rango" required>
+          <input type="number" id="rango" v-model="rango" required class="custom" >
+          
           <ion-button @click="filtrarPorRango()">Filtrar</ion-button>
         </ion-form>
-
-        <div v-if="ubicacionesFiltradas.length > 0">
-          <h2>Campañas filtradas:</h2>
-          <ion-card v-for="camp in ubicacionesFiltradas" :key="camp.campaign_Id" @click="goToPetDetails(camp.campaign_Id)">
-            <ion-card-header>
+      </div>
+        <div v-if="ubicacionesFiltradas.length > 0" class="cardmain">
+          <h2 class="InputUbicacion">Campañas</h2>
+          <ion-card v-for="camp in ubicacionesFiltradas" :key="camp.campaign_Id" @click="goToPetDetails(camp.campaign_Id)" class="card">
+            <ion-card-header class="cardh">
               <img :src="camp.foto" />
-              <ion-card-title>{{ camp.titulo }}</ion-card-title>
+              <ion-card-title class="titulo">{{ camp.titulo }}</ion-card-title>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="cardhh">
               <p>Descripcion: {{ camp.descripcion }}</p>
               
             </ion-card-content>
@@ -34,7 +35,7 @@
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      </div>
+      
     </ion-content>
   </ion-page>
 </template>
