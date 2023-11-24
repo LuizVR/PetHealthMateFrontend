@@ -52,14 +52,7 @@
         <input type="file" @change="handleImageUpload" />
       </ion-item>
       <ion-button @click="submitForm">Guardar</ion-button>
-      <!-- Modal -->
-      <ion-modal v-model="showModal">
-        <ion-content>
-          <p>Mascota registrada</p>
-          <ion-button @click="closeModal">Aceptar</ion-button>
         </ion-content>
-      </ion-modal>
-    </ion-content>
   </ion-page>
 </template>
 
