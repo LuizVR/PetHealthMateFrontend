@@ -109,6 +109,7 @@ import {
           }
   
           await axios.put(url, petData);
+          this.$router.push("/listaCampania");
           // Tratar el éxito de la actualización
         } catch (error) {
           console.error("Error updating campaings:", error);
