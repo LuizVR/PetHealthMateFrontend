@@ -8,15 +8,15 @@
     <ion-content :fullscreen="true" class="background">
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Nombre</ion-label>
-        <ion-input v-model="form.nombre" style="color: black;" placeholder="Ingresa nombre"></ion-input>
+        <ion-input v-model="form.nombre" style="color: black;" placeholder="Ingresa nombre" maxlength="15"></ion-input>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Edad</ion-label>
-        <ion-input v-model="form.edad" type="number" style="color: black;" placeholder="Ingresa edad"></ion-input>
+        <ion-input v-model="form.edad" type="number" style="color: black;" placeholder="Ingresa edad" @input="validateInput"></ion-input>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Peso</ion-label>
-        <ion-input v-model="form.peso" type="number" style="color: black;" placeholder="Ingresa peso"></ion-input>
+        <ion-input v-model="form.peso" type="number" style="color: black;" placeholder="Ingresa peso" @input="validateInput"></ion-input>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Talla</ion-label>
@@ -52,6 +52,18 @@
         <input type="file" @change="handleImageUpload" style="color: black;"/>
       </ion-item>
       <ion-button @click="submitForm">Guardar</ion-button>
+      <!-- Agrega el componente IonAlert aquí -->
+      <ion-alert
+  v-if="showAlert"
+  :header="'Alerta'"
+  :message="alertMessage"
+  :buttons="[{
+    text: 'OK',
+    handler: () => {
+      showAlert.value = false;
+    }
+  }]"
+/>
         </ion-content>
   </ion-page>
 </template>

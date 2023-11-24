@@ -52,7 +52,7 @@
         <ion-label position="stacked" style="color: black;">Agrega una imagen</ion-label>
         <input type="file" @change="handleImageUpload" style="color: black;" />
       </ion-item>
-      <ion-button @click="submitForm">Guardar</ion-button>
+      <ion-button @click="submitForm" :disabled="isSubmitting">Guardar</ion-button>
     </ion-content>
     <!-- Botón flotante para eliminar -->
     <ion-fab vertical="bottom" horizontal="end">
