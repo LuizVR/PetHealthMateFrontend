@@ -1,45 +1,48 @@
 <template>
-    <ion-page>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Agrega Campaña</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
-        <ion-item>
-          <ion-label position="floating">Titulo</ion-label>
-          <ion-input v-model="form.titulo" :value="form.titulo"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Descripcion</ion-label>
-          <ion-input :value="form.descripcion" @input="updateField('descripcion', $event)"></ion-input>
-        </ion-item>
-        
-  
-        <ion-item class="ubicacion" >
-         
-          <ion-label position="floating">Ubicacion</ion-label>
-          <ion-input v-model="Gps"  :value="form.ubicacion" @input="updateField('ubicacion', $event)"></ion-input>
-          <ion-button @click="AbrirUbicacion" class="btnGps">GPS</ion-button>
-        
-         
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Fecha</ion-label>
-          <ion-datetime
-            v-model="form.fecha" 
-            display-format="YYYY-MM-DDTHH:mm"
-            @ionChange="handleDatetimeSelection($event)"
-          ></ion-datetime>
-        </ion-item>
-  
-        <ion-item>
-          <ion-label position="stacked">Agrega una imagen</ion-label>
-          <input type="file" @change="handleImageUpload" />
-        </ion-item>
-        <ion-button @click="submitForm">Guardar</ion-button>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Agregar Campaña</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="background">
+      <ion-item color="#">
+        <ion-label position="floating" style="color: black">Titulo</ion-label>
+        <ion-input v-model="form.titulo" :value="form.titulo" style="color: black"></ion-input>
+      </ion-item>
+      <ion-item color="#">
+        <ion-label position="floating" style="color: black">Descripcion</ion-label>
+        <ion-input
+          :value="form.descripcion"
+          @input="updateField('descripcion', $event)" style="color: black"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="ubicacion" color="#">
+        <ion-label position="floating" style="color: black">Ubicacion</ion-label>
+        <ion-input
+          v-model="Gps"
+          :value="form.ubicacion"
+          @input="updateField('ubicacion', $event)" style="color: black"
+        ></ion-input>
+        <ion-button @click="AbrirUbicacion" class="btnGps">GPS</ion-button>
+      </ion-item>
+      <ion-item color="#">
+        <ion-datetime
+          v-model="form.fecha"
+          display-format="YYYY-MM-DDTHH:mm"
+          @ionChange="handleDatetimeSelection($event)"
+        ></ion-datetime>
+      </ion-item>
+      <br>
+      <br>
+      <ion-item color="#">
+        <ion-label position="stacked" style="color: black">Agrega una imagen</ion-label>
+        <input type="file" @change="handleImageUpload" style="color: black" />
+      </ion-item>
+      <ion-button @click="submitForm">Guardar</ion-button>
     </ion-content>
-         <!-- Botón flotante para eliminar -->
+    <!-- Botón flotante para eliminar -->
     <ion-fab vertical="bottom" horizontal="end">
       <ion-fab-button color="danger" @click="openDeleteModal">
         <ion-icon :icon="trashIcon"></ion-icon>
@@ -57,10 +60,10 @@
             <ion-button @click="closeDeleteModal">Cancelar</ion-button>
           </ion-card-content>
         </ion-card>
-    </ion-content>
+      </ion-content>
     </ion-modal>
-    </ion-page>
-  </template>
-  
-  <script src="./js/EditarCampaignsScript.js"></script>
-  <style scoped src="./css/CampaingsPostStyle.css"></style>
+  </ion-page>
+</template>
+
+<script src="./js/EditarCampaignsScript.js"></script>
+<style src="./css/CampaingsPostStyle.css"></style>
