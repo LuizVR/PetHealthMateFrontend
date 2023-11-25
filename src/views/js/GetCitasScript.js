@@ -28,13 +28,20 @@ export default {
       return new Date(dateString).toLocaleDateString('es-ES', options);
     },
     async eliminarCita(date) {
-        try {
-          // Aquí deberías hacer la llamada a la API para eliminar la cita
-          // Puedes utilizar axios.delete y proporcionar la URL correcta para eliminar la cita
-          console.log('Eliminando cita:', date);
-        } catch (error) {
-          console.error('Error deleting data:', error);
-        }
+      try {
+        // Hacer la llamada a la API para eliminar la cita
+        await axios.delete(`https://localhost:44329/api/Date?id=${date.date_Id}`);
+        
+        // Eliminar la cita localmente
+        this.dates = this.dates.filter(item => item.date_Id !== date.date_Id);
+        
+        console.log('Cita eliminada:', date);
+
+        // Redirigir a la ruta /detalleCita después del éxito
+        this.$router.push('/detalleCita');
+      } catch (error) {
+        console.error('Error deleting data:', error);
+      }
     },
   },
 };

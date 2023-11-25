@@ -26,7 +26,8 @@
             </ion-card-header>
             <ion-card-content class="cardhh">
               <p>Descripcion: {{ camp.descripcion }}</p>
-              
+              <p>Lugar: {{ camp.ubicacion }}</p>
+              <p>Fecha: {{ camp.fecha }}</p>
             </ion-card-content>
           </ion-card>
         </div>

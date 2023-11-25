@@ -10,8 +10,8 @@ export default {
       Gps: '',
       camposCompletos: false,
       c: {
-        titulo: localStorage.getItem('titulo') || '',
-        descripcion: localStorage.getItem('descripcion') || '',
+        titulo: '',
+        descripcion: '',
         ubicacion: '',
         latitud: '',
         longitud: '',
@@ -51,7 +51,6 @@ export default {
     },
     updateField(field, event) {
       this.c[field] = event.target.value;
-      localStorage.setItem(field, event.target.value);
       this.camposCompletos = Object.values(this.c).every(value => value !== '');
     },
     AbrirUbicacion() {
@@ -78,6 +77,9 @@ export default {
       })
         .then(response => {
           console.log(response.data);
+
+          // Redirigir a la ruta /listCampania después del éxito
+          this.$router.push('/listCampania');
         })
         .catch(error => {
           console.error(error);

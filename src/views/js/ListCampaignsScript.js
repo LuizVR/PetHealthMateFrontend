@@ -58,7 +58,7 @@ export default defineComponent({
         this.camps = response.data;
         this.ubicacionesFiltradas = this.camps;
         //console.log(this.ubicacionesFiltradas);
-        window.location.reload(); // Recargar la página
+        
       } catch (error) {
         console.error("Error fetching pets:", error);
       }

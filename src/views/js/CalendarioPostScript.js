@@ -51,6 +51,9 @@ export default {
       })
         .then(response => {
           console.log('Respuesta del servidor:', response.data);
+
+          // Redirigir a la ruta /calendar después del éxito
+          this.$router.push('/calendar');
         })
         .catch(error => {
           console.error('Error en la solicitud POST:', error);

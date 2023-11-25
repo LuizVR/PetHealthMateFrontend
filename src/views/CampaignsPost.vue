@@ -53,7 +53,7 @@
         >
         <input type="file" @change="handleImageUpload" style="color: black" />
       </ion-item>
-      <ion-button @click="submitForm" :disabled="!camposCompletos" class="btn-guardar">Guardar</ion-button>
+      <ion-button @click="submitForm"  class="btn-guardar">Guardar</ion-button>
     </ion-content>
   </ion-page>
 </template>
