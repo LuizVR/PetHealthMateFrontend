@@ -70,7 +70,7 @@ import {
       async loadPetData() {
         try {
           const response = await axios.get(
-            `https://localhost:44329/api/Campaign/${this.campaignId}`
+            `https://www.PetHealthMateBack.somee.com/api/Campaign/${this.campaignId}`
             
           );
           console.log('Campain Data:', response.data);
@@ -96,7 +96,7 @@ import {
       async submitForm() {
         try {
           const { foto, ...petData } = this.form; // Separar la foto de los datos de la mascota
-          const url = `https://localhost:44329/api/Campaign/${this.campaignId}`;
+          const url = `https://www.PetHealthMateBack.somee.com/api/Campaign/${this.campaignId}`;
   
           console.log("URL de la solicitud:", url);
           console.log("Datos de la Campania:", petData);
@@ -126,7 +126,7 @@ import {
   
       confirmDelete() {
         axios
-          .delete(`https://localhost:44329/api/Campaign?id=${this.campaignId}`)
+          .delete(`https://www.PetHealthMateBack.somee.com/api/Campaign?id=${this.campaignId}`)
           .then((response) => {
             console.log("Campania eliminada exitosamente:", response.data);
             this.closeDeleteModal(); // Cierra el modal después de eliminar la mascota

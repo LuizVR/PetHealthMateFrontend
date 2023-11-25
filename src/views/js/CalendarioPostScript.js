@@ -43,7 +43,7 @@ export default {
         return;
       }
 
-      const apiUrl = `https://localhost:44329/api/Date/${this.petId}`;
+      const apiUrl = `https://www.PetHealthMateBack.somee.com/api/Date/${this.petId}`;
       axios.post(apiUrl, {
         pet_Id: this.petId,
         fecha: this.form.fecha,

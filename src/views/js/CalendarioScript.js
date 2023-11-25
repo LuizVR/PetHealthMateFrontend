@@ -32,7 +32,7 @@ export default defineComponent({
   
       try {
         // Incluir el uid en la solicitud a la API
-        var uri = "https://localhost:44329/api/Pet/mismascotas/"
+        var uri = "https://www.PetHealthMateBack.somee.com/Pet/mismascotas/"
         const response = await axios.get(uri+userUuid);
         this.pets = response.data;
       } catch (error) {

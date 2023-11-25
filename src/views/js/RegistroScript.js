@@ -51,7 +51,7 @@ export default defineComponent({
     },
     async cargarCorreosRegistrados() {
       try {
-        const response = await axios.get("https://localhost:44329/api/User/emails");
+        const response = await axios.get("https://www.PetHealthMateBack.somee.com/api/User/emails");
         this.correosRegistrados = response.data;
       } catch (error) {
         console.error("Error al cargar correos registrados:", error);
@@ -83,7 +83,7 @@ export default defineComponent({
       }
 
       try {
-        const response = await axios.post("https://localhost:44329/api/User", this.usuario, {
+        const response = await axios.post("https://www.PetHealthMateBack.somee.com/api/User", this.usuario, {
           headers: {
             "Content-Type": "application/json",
           },

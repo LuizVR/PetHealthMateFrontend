@@ -73,7 +73,7 @@ export default {
           return;
         }
 
-        const apiUrl = `https://localhost:44329/api/Pet/${userUuid}`;
+        const apiUrl = `https://www.PetHealthMateBack.somee.com/api/Pet/${userUuid}`;
         const dataToSend = Object.entries(form.value).reduce((acc, [key, value]) => {
           acc[key] = key === 'foto' ? value : String(value);
           return acc;

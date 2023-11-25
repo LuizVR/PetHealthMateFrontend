@@ -31,7 +31,7 @@ export default defineComponent({
           Email: this.email
         };
 
-        const response = await axios.post('https://localhost:44329/api/User/reset-password', passwordResetDto);
+        const response = await axios.post('https://www.PetHealthMateBack.somee.com/api/User/reset-password', passwordResetDto);
 
         // Muestra un mensaje de éxito si la solicitud es exitosa
         this.mostrarAlerta('Éxito', response.data);

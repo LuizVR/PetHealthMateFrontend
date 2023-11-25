@@ -70,7 +70,7 @@ export default {
 
       console.log('Datos a enviar:', dataToSend);
 
-      axios.post('https://localhost:44329/api/Campaign', dataToSend, {
+      axios.post('https://www.PetHealthMateBack.somee.com/api/Campaign', dataToSend, {
         headers: {
           'Content-Type': 'application/json'
         }

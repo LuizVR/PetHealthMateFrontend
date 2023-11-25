@@ -53,7 +53,7 @@ export default defineComponent({
     async fetchPets() {
       try {
         const response = await axios.get(
-          "https://localhost:44329/api/Campaign"
+          "https://www.PetHealthMateBack.somee.com/api/Campaign"
         );
         this.camps = response.data;
         this.ubicacionesFiltradas = this.camps;

@@ -73,7 +73,7 @@ export default defineComponent({
     async loadPetData() {
       try {
         const response = await axios.get(
-          `https://localhost:44329/api/Pet/${this.petId}`
+          `https://www.PetHealthMateBack.somee.com/api/Pet/${this.petId}`
         );
         console.log("Pet Data:", response.data);
         this.form = { ...response.data };
@@ -121,7 +121,7 @@ export default defineComponent({
     async updatePet() {
       try {
         const { foto, ...petData } = this.form;
-        const url = `https://localhost:44329/api/Pet/${this.petId}`;
+        const url = `https://www.PetHealthMateBack.somee.com/api/Pet/${this.petId}`;
 
         console.log("URL de la solicitud:", url);
         console.log("Datos de la mascota:", petData);
@@ -145,7 +145,7 @@ export default defineComponent({
     },
     confirmDelete() {
       axios
-        .delete(`https://localhost:44329/api/Pet?id=${this.petId}`)
+        .delete(`https://www.PetHealthMateBack.somee.com/api/Pet?id=${this.petId}`)
         .then((response) => {
           console.log("Mascota eliminada exitosamente:", response.data);
           this.closeDeleteModal();

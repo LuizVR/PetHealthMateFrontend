@@ -36,7 +36,7 @@ export default defineComponent({
         console.error('UID no encontrado');
         return;
       }
-      var uri = "https://localhost:44329/api/User/details/"
+      var uri = "https://www.PetHealthMateBack.somee.com/api/User/details/"
       axios.get(uri+userUuid)
         .then(response => {
           this.userData.nombre = response.data.nombre;

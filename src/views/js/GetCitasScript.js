@@ -17,7 +17,7 @@ export default {
   methods: {
     async getData() {
       try {
-        const response = await axios.get(`https://localhost:44329/api/Date/byPetId/${this.petId}`);
+        const response = await axios.get(`https://www.PetHealthMateBack.somee.com/api/Date/byPetId/${this.petId}`);
         this.dates = response.data;
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -30,7 +30,7 @@ export default {
     async eliminarCita(date) {
       try {
         // Hacer la llamada a la API para eliminar la cita
-        await axios.delete(`https://localhost:44329/api/Date?id=${date.date_Id}`);
+        await axios.delete(`https://www.PetHealthMateBack.somee.com/api/Date?id=${date.date_Id}`);
         
         // Eliminar la cita localmente
         this.dates = this.dates.filter(item => item.date_Id !== date.date_Id);
