@@ -26,6 +26,11 @@ export default {
     const showAlert = ref(false);
     const alertMessage = ref('');
 
+    const goToPetPage = () => {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      router.push('/mascotas');
+    };
+
     const handleImageUpload = (event) => {
       const reader = new FileReader();
       reader.onload = (e) => {
@@ -101,7 +106,6 @@ export default {
         showAlert.value = true;
       }
     };
-
     return {
       form,
       imageFile,
@@ -109,7 +113,8 @@ export default {
       submitForm,
       showAlert,
       alertMessage,
-      validateInput
+      validateInput,
+      goToPetPage
     };
   }
 };

@@ -17,4 +17,6 @@
     color: #000; /* Cambia #fff al color del texto que desees */
     padding: 8px 16px; /* Ajusta el relleno para cambiar el tamaño del botón */
   }
-  
+  .custom-back-button {
+    margin-left: 10px; /* Ajusta el valor según sea necesario para la posición deseada */
+  }

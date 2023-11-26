@@ -154,6 +154,10 @@ export default defineComponent({
         .catch((error) => {
           console.error("Error al eliminar la mascota:", error);
         });
-    }
+    }, 
+    goToPetPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/mascotas');
+    },
   }
 });

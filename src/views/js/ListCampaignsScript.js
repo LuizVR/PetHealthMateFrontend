@@ -157,5 +157,9 @@ export default defineComponent({
     goToPetDetails(campaign_Id) {
       this.$router.push({ name: "InfoCampaigns", params: { campaign_Id } });
     },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/menu');
+    },
   },
 });

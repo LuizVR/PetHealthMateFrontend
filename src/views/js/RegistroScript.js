@@ -107,5 +107,9 @@ export default defineComponent({
     iniciarSesion() {
       this.$router.push("/login");
     },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/login');
+    },
   },
 });

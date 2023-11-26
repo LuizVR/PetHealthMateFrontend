@@ -137,6 +137,10 @@ import {
             // Manejar el error de acuerdo a tu lógica de la aplicación
           });
       },
+      goToMenuPage() {
+        // Utiliza el enrutador de Vue para navegar a la página /menu
+        this.$router.push('/listCampania');
+      },
     },
   });
   

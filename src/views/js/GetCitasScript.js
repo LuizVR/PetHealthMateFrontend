@@ -43,5 +43,9 @@ export default {
         console.error('Error deleting data:', error);
       }
     },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/detalleCita');
+    },
   },
 };

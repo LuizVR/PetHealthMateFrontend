@@ -2,7 +2,14 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Agrega Campaña</ion-title>
+        <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
+        <ion-buttons>
+          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
+          <ion-button @click="goToMenuPage">
+            <img src="/src/img/icons/arrow.png" alt="Flecha">
+          </ion-button>
+        </ion-buttons> 
+        <ion-title>Agregar Campaña</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="background">

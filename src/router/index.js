@@ -17,11 +17,12 @@ import PostCalendario from '../views/PostCalendario.vue'
 import GetCalendario from '../views/GetCalendario.vue'
 import GetCitas from '../views/GetCitas.vue'
 import Contraseña from '../views/Contraseña.vue'
+import Inicio from '../views/Inicio.vue'
 
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    component: Inicio
   },
   {
     path: '/menu',
@@ -132,7 +133,7 @@ const routes = [
     path: '/restablecer',
     name: 'Contraseña',
     component: Contraseña,
-  }
+  },
 ]
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

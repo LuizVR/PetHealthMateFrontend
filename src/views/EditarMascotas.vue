@@ -2,6 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
+         <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
+         <ion-buttons>
+          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
+          <ion-button @click="goToPetPage" class="custom-back-button">
+            <img src="/src/img/icons/arrow.png" alt="Flecha">
+          </ion-button>
+        </ion-buttons> 
         <ion-title style="color: black;">Edita tu Mascota</ion-title>
       </ion-toolbar>
     </ion-header>

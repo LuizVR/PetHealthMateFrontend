@@ -43,5 +43,9 @@ export default defineComponent({
     goToPetDetails(pet_Id) {
       this.$router.push({ name: 'GetCitas', params: { pet_Id } });
     },
+    goToCalendarPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/calendar');
+    },  
   }
 });

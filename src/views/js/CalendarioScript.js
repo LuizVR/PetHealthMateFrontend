@@ -32,7 +32,7 @@ export default defineComponent({
   
       try {
         // Incluir el uid en la solicitud a la API
-        var uri = "https://www.PetHealthMateBack.somee.com/Pet/mismascotas/"
+        var uri = "https://www.PetHealthMateBack.somee.com/api/Pet/mismascotas/"
         const response = await axios.get(uri+userUuid);
         this.pets = response.data;
       } catch (error) {
@@ -45,6 +45,10 @@ export default defineComponent({
     },
     goToCalendar() {
         this.$router.push('/detalleCita');
+      },
+      goToMenuPage() {
+        // Utiliza el enrutador de Vue para navegar a la página /menu
+        this.$router.push('/menu');
       },
   }
 });

@@ -63,6 +63,10 @@ export default {
       const fechaSeleccionada = event.detail.value;
       console.log('Fecha seleccionada:', fechaSeleccionada);
       this.form.fecha = fechaSeleccionada;
-    }    
+    },
+    goToCalendarPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/calendar');
+    },  
   },
 };

@@ -2,9 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
+      <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
+      <ion-buttons>
+          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
+          <ion-button @click="goToMenuPage">
+            <img src="/src/img/icons/arrow.png" alt="Flecha" style="width: 30px; height: 30px;">
+          </ion-button>
+        </ion-buttons>    
         <ion-title class="ion-text-center">Perfil</ion-title>
       </ion-toolbar>
     </ion-header>

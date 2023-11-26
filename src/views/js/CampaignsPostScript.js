@@ -85,5 +85,9 @@ export default {
           console.error(error);
         });
     },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/listCampania');
+    },
   },
 };

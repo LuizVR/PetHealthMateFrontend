@@ -51,5 +51,9 @@ export default defineComponent({
     irAEditar() {
       this.$router.push('/perfil/editar');
     },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/menu');
+    },
   },
 });
