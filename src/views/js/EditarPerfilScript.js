@@ -82,6 +82,10 @@ export default defineComponent({
     },
     
     async guardarDatos() {
+      if (!this.userData.nombre.trim()) {
+        this.mostrarAlerta('Error', 'El nombre no puede estar vacío.');
+        return;
+      }
       const datosParaGuardar = {
         nombre: this.userData.nombre,
         correo: this.userData.correo,
