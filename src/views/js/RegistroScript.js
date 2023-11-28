@@ -60,35 +60,45 @@ export default defineComponent({
     async registrar() {
       this.usuario.foto = "/src/img/foto_preterminada.png";
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const contraseniaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+    
       if (!this.usuario.correo.match(emailRegex)) {
         this.mostrarAlerta("Error", "Por favor, ingrese un correo electrónico válido.");
         return;
       }
+    
+      if (!contraseniaRegex.test(this.usuario.contrasenia)) {
+        this.mostrarAlerta("Error", "La contraseña debe tener al menos una letra mayúscula, una minúscula, un número y un carácter especial(@$!%*?&).");
+        return;
+      }
+    
       if (this.usuario.contrasenia.length < 6 || this.usuario.contrasenia.length > 20) {
         this.mostrarAlerta("Error", "La contraseña debe tener entre 6 y 20 caracteres.");
         return;
       }
+    
       if (!this.usuario.nombre || !this.usuario.correo || !this.usuario.contrasenia) {
         this.mostrarAlerta("Error", "Por favor, complete todos los campos.");
         return;
       }
+    
       if (!this.usuario.acuerdo) {
         this.mostrarAlerta("Error", "Debe aceptar los términos y condiciones.");
         return;
       }
-
+    
       if (this.correosRegistrados.includes(this.usuario.correo)) {
         this.mostrarAlerta("Error", "El correo electrónico ya está registrado.");
         return;
       }
-
+    
       try {
         const response = await axios.post("https://www.PetHealthMateBack.somee.com/api/User", this.usuario, {
           headers: {
             "Content-Type": "application/json",
           },
         });
-
+    
         if (response.status === 200) {
           this.mostrarAlerta("Éxito", "Usuario registrado correctamente.");
           this.$router.push("/login");
@@ -99,11 +109,13 @@ export default defineComponent({
         console.error("Error al registrar usuario:", error);
         this.mostrarAlerta("Error", "Ocurrió un error al registrar el usuario.");
       }
+    
       this.usuario.nombre = "";
       this.usuario.correo = "";
       this.usuario.contrasenia = "";
       this.usuario.foto = "/src/img/foto_preterminada.png";
-    },
+    }
+    ,
     iniciarSesion() {
       this.$router.push("/login");
     },
