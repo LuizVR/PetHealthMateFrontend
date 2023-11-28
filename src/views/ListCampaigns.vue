@@ -1,15 +1,11 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-        <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
-        <ion-buttons>
-          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
-          <ion-button @click="goToMenuPage">
-            <img src="/src/img/icons/arrow.png" alt="Flecha">
-          </ion-button>
-        </ion-buttons> 
-        <ion-title class="ion-text-center">Campañas cerca</ion-title>
+      <ion-toolbar class="ion-text-center">
+        <div class="header-content">
+          <img src="/src/img/icons/arrow.png" alt="User Profile" @click="goToMenuPage" class="user-icon" />
+          <ion-title>Campaña Cerca</ion-title>
+        </div>
       </ion-toolbar>
     </ion-header>
 

@@ -118,6 +118,10 @@ export default defineComponent({
           // Muestra una alerta de error
           this.mostrarAlerta('Error', 'Hubo un error al guardar los datos.');
         });
-    },    
+    },
+    goToMenuPage() {
+      // Utiliza el enrutador de Vue para navegar a la página /menu
+      this.$router.push('/perfil');
+    },   
   },
 });

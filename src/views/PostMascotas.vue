@@ -1,15 +1,11 @@
 <template>
   <ion-page>
     <ion-header>
-      <ion-toolbar>
-          <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
-          <ion-buttons>
-          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
-          <ion-button @click="goToPetPage" class="custom-back-button">
-            <img src="/src/img/icons/arrow.png" alt="Flecha">
-          </ion-button>
-        </ion-buttons>
-        <ion-title style="color: black;">Registra a un amigo</ion-title>
+      <ion-toolbar class="ion-text-center">
+        <div class="header-content">
+          <img src="/src/img/icons/arrow.png" alt="User Profile" @click="goToPetPage" class="user-icon" />
+          <ion-title>Registra a un amigo</ion-title>
+        </div>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" class="background">
@@ -19,11 +15,13 @@
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Edad</ion-label>
-        <ion-input v-model="form.edad" type="number" style="color: black;" placeholder="Ingresa edad" @input="validateInput"></ion-input>
+        <ion-input v-model="form.edad" type="number" style="color: black;" placeholder="Ingresa edad"
+          @input="validateInput"></ion-input>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Peso</ion-label>
-        <ion-input v-model="form.peso" type="number" style="color: black;" placeholder="Ingresa peso" @input="validateInput"></ion-input>
+        <ion-input v-model="form.peso" type="number" style="color: black;" placeholder="Ingresa peso"
+          @input="validateInput"></ion-input>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">Talla</ion-label>
@@ -49,31 +47,27 @@
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="floating" style="color: black;">¿Esterilizado?</ion-label>
-        <ion-select v-model="form.esterilizado" :value="form.esterilizado"  placeholder="Selecciona uno" style="color: black;">
+        <ion-select v-model="form.esterilizado" :value="form.esterilizado" placeholder="Selecciona uno"
+          style="color: black;">
           <ion-select-option value="Si">Si</ion-select-option>
           <ion-select-option value="No">No</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item color="D2B48C">
         <ion-label position="stacked" style="color: black;">Agrega una imagen</ion-label>
-        <input type="file" @change="handleImageUpload" style="color: black;"/>
+        <input type="file" @change="handleImageUpload" style="color: black;" />
       </ion-item>
       <ion-button @click="submitForm">Guardar</ion-button>
       <!-- Agrega el componente IonAlert aquí -->
-      <ion-alert
-  v-if="showAlert"
-  :header="'Alerta'"
-  :message="alertMessage"
-  :buttons="[{
-    text: 'OK',
-    handler: () => {
-      showAlert.value = false;
-    }
-  }]"
-/>
-        </ion-content>
+      <ion-alert v-if="showAlert" :header="'Alerta'" :message="alertMessage" :buttons="[{
+        text: 'OK',
+        handler: () => {
+          showAlert.value = false;
+        }
+      }]" />
+    </ion-content>
   </ion-page>
 </template>
 
-  <script src="./js/PostMascotasScript.js"></script>
-  <style scoped src="./css/PostMascotaStyle.css"></style>
+<script src="./js/PostMascotasScript.js"></script>
+<style scoped src="./css/PostMascotaStyle.css"></style>

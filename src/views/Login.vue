@@ -5,7 +5,6 @@
         <ion-title class="ion-text-center">PET HEALTH MET</ion-title>
       </ion-toolbar>
     </ion-header>
-
     <ion-content :fullscreen="true" class="background">
       <div class="contenido">>
         <ion-input class="custom" label="Correo" label-placement="floating" fill="solid" placeholder="Ingresar Correo"

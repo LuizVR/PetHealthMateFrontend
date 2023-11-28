@@ -4,9 +4,14 @@
   }
   ion-toolbar{
     color:#000000;
-    --background: #D2B48C;
+    --background: #FF7F00;
     font-family: 'Titulo'; 
   }
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
   ion-input {
     color: black;
   }

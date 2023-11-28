@@ -1,11 +1,11 @@
 <template>
     <ion-page>
         <ion-header>
-            <ion-toolbar>
-                <ion-buttons slot="start">
-                    <ion-back-button defaultHref="/"></ion-back-button>
-                </ion-buttons>
-                <ion-title class="ion-text-center">Editar Perfil</ion-title>
+            <ion-toolbar class="ion-text-center">
+                <div class="header-content">
+                    <img src="/src/img/icons/arrow.png" alt="User Profile" @click="goToMenuPage" class="user-icon" />
+                    <ion-title>Editar Perfil</ion-title>
+                </div>
             </ion-toolbar>
         </ion-header>
         <ion-content :fullscreen="true" class="background">

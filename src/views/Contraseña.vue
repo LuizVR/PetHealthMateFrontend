@@ -1,18 +1,13 @@
 <template>
     <ion-page>
         <ion-header>
-            <ion-toolbar>
-                  <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
-        <ion-buttons>
-          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
-          <ion-button @click="goToMenuPage">
-            <img src="/src/img/icons/arrow.png" alt="Flecha">
-          </ion-button>
-        </ion-buttons> 
-                <ion-title class="ion-text-center">Restablecer Contraseña</ion-title>
+            <ion-toolbar class="ion-text-center">
+                <div class="header-content">
+                    <img src="/src/img/icons/arrow.png" alt="User Profile" @click="goToMenuPage" class="user-icon" />
+                    <ion-title>Restablecer Contraseña</ion-title>
+                </div>
             </ion-toolbar>
         </ion-header>
-
         <ion-content :fullscreen="true" class="background">
             <div class="contenido">>
                 <p>Por favor, ingresa la dirección de correo electrónico asociada a tu cuenta para iniciar el

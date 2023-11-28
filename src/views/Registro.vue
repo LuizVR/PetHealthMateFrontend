@@ -2,14 +2,10 @@
   <ion-page>
     <ion-header>
       <ion-toolbar class="ion-text-center">
-          <!-- Utiliza ion-buttons para colocar el botón en el lado izquierdo -->
-          <ion-buttons>
-          <!-- Utiliza una imagen como botón y agrega un evento de clic -->
-          <ion-button @click="goToMenuPage">
-            <img src="/src/img/icons/arrow.png" alt="Flecha">
-          </ion-button>
-        </ion-buttons> 
-        <ion-title>Registro</ion-title>
+        <div class="header-content">
+          <img src="/src/img/icons/arrow.png" alt="User Profile" @click="goToMenuPage" class="user-icon" />
+          <ion-title>Registro</ion-title>
+        </div>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true" class="background">

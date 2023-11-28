@@ -16,12 +16,12 @@ ion-card {
 }
 ion-toolbar{
   color:#000000;
-  --background: #D2B48C;
+  --background: #FF7F00;
   font-family: 'Titulo'; 
 }
 ion-card{
   font-family: 'Cuerpo';
 }
 .user-button{
-  --background: #D2B48C;
+  --background: #FF7F00;
 }

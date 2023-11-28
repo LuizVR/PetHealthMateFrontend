@@ -24,11 +24,11 @@
 
 ion-toolbar{
   color:#000000;
-  --background: #D2B48C;
+  --background: #FF7F00;
   font-family: 'Titulo';
 }
 .login-button{
-  --background: #D2B48C;
+  --background: #FF7F00;
   --border-radius: 20px;
   color:#000000;
   margin-top: 50px;
@@ -50,7 +50,7 @@ p {
 }
 
 .links-button{
-  --background: #D2B48C;
+  --background: #FF7F00;
   --border-radius: 20px;
   color:#000000;
   width: 80px !important;;
