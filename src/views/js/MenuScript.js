@@ -50,7 +50,7 @@ export default defineComponent({
     goToExit() {
       localStorage.removeItem('CapacitorStorage.uid');
       localStorage.removeItem('CapacitorStorage.token');
-      this.$router.push('/');
+      this.$router.push('/login');
     }    
   }
 });

@@ -12,11 +12,15 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@capacitor/android": "^5.5.1",
+    "@capacitor/cli": "^5.5.1",
+    "@capacitor/core": "^5.5.1",
     "@capacitor/storage": "^1.2.5",
     "@ionic/vue": "^7.5.4",
     "@ionic/vue-router": "^7.5.4",
     "axios": "^1.6.2",
     "ionicons": "^7.2.1",
+    "or": "^0.2.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
