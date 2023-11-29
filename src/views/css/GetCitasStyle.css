@@ -3,13 +3,12 @@
   
 }
 ion-toolbar{
-    color:#000000;
-    --background: #D2B48C;
-    font-family: 'Titulo'; 
-  }
-
+  color:#000000;
+  --background: #FF7F00;
+  font-family: 'Titulo';
+}
   .custom-card {
-    background-color: #D2B48C;
+    background-color: #ff8000b2;
     border-radius: 10px;
     margin: 10px;
   }

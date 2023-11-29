@@ -23,7 +23,7 @@
             Eliminar
           </ion-button>
         </ion-card-content>
-      </ion-card>
+      </ion-card> 
     </ion-content>
   </ion-page>
 </template>

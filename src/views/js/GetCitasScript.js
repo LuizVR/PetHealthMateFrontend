@@ -26,7 +26,7 @@ export default {
     formatDate(dateString) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(dateString).toLocaleDateString('es-ES', options);
-    },
+    }, 
     async eliminarCita(date) {
       try {
         // Hacer la llamada a la API para eliminar la cita

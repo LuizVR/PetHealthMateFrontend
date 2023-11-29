@@ -17,7 +17,7 @@
         </ion-card-header>
       </ion-card>
     </ion-content>
-  </ion-page>
+  </ion-page> 
 </template>
 
 

@@ -1,4 +1,4 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon, IonNav } from '@ionic/vue';
 import { add } from 'ionicons/icons';
 import { defineComponent } from 'vue';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import {Storage} from '@capacitor/storage';
 export default defineComponent({
   name: 'PetCard',
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonFab, IonFabButton, IonIcon, IonNav
   },
   data() {
     return {
@@ -41,11 +41,12 @@ export default defineComponent({
     },
   
     goToPetDetails(pet_Id) {
+      // Utiliza una ruta dinámica con el ID de la mascota
       this.$router.push({ name: 'GetCitas', params: { pet_Id } });
     },
     goToCalendarPage() {
       // Utiliza el enrutador de Vue para navegar a la página /menu
       this.$router.push('/calendar');
-    },  
+    },   
   }
 });

@@ -118,11 +118,11 @@ const routes = [
     name: 'GetCalendario',
     component: GetCalendario,
   },
-  {
-    path: '/getCitas',
-    name: 'GetCitas',
-    component: GetCitas,
-  },
+  // {
+  //   path: '/getCitas',
+  //   name: 'GetCitas',
+  //   component: GetCitas,
+  // },
   {
     path: '/getCitas/:pet_Id',
     name: 'GetCitas',
