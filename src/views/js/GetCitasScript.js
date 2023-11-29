@@ -1,6 +1,10 @@
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
 import axios from 'axios';
 
 export default {
+  components: {
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption
+  },
   data() {
     return {
       petId: null,

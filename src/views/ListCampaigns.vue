@@ -22,7 +22,7 @@
       </div>
         <div v-if="ubicacionesFiltradas.length > 0" class="cardmain">
           <h2 class="InputUbicacion">Campañas</h2>
-          <ion-card v-for="camp in ubicacionesFiltradas" :key="camp.campaign_Id" @click="goToPetDetails(camp.campaign_Id)" class="card">
+          <ion-card v-for="camp in ubicacionesFiltradas" :key="camp.campaign_Id"  class="card">
             <ion-card-header class="cardh">
               <img :src="camp.foto" />
               <ion-card-title class="titulo">{{ camp.titulo }}</ion-card-title>

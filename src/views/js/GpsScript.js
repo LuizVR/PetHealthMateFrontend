@@ -1,9 +1,12 @@
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
 import { ref, onMounted } from 'vue';
 import GooglemapsService from './GpsServiceScript.js';
 import { useRouter } from 'vue-router';
 
 export default{
-  
+  components: {
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonDatetime, IonButton, IonLabel, IonSelect, IonSelectOption
+  },
 setup(){
     const map = ref(null);
     const marker = ref(null);
