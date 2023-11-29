@@ -89,5 +89,9 @@ export default {
       // Utiliza el enrutador de Vue para navegar a la página /menu
       this.$router.push('/listCampania');
     },
+    updateField(field, event) {
+      this.c[field] = event.target.value;
+      this.camposCompletos = Object.values(this.c).every(value => value !== '');
+    },
   },
 };
